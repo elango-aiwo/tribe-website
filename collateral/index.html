@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Collateral — AIWO Tribe</title>
+<meta name="description" content="The complete sales, marketing, clinical, and organisational collateral pack for AIWO Tribe — everything to win, launch and scale measured workforce longevity." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --ink:#0B0F17; --white:#fff; --mist:#F7F9FC; --cloud:#EDF2F8; --line:#E4EAF3; --slate:#5B6B85; --graphite:#1B2230;
+  --teal:#00C2A8; --indigo:#4A29C9; --primary:#3A2BC0; --coral:#FF6B4A;
+  --grad:linear-gradient(120deg,#00C2A8 0%,#4A29C9 100%);
+  --grad-bright:linear-gradient(120deg,#14E0C2 0%,#6A45F0 100%);
+  --teal-tint:#E6FBF7; --indigo-tint:#ECE8FB;
+  --mono:"IBM Plex Mono",monospace; --display:"Sora",sans-serif; --body:"Inter",sans-serif;
+  --shadow:0 20px 60px -24px rgba(11,15,23,.18); --shadow-sm:0 8px 24px -14px rgba(11,15,23,.16);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.001ms!important;animation-duration:.001ms!important}}
+body{font-family:var(--body);color:var(--ink);background:var(--mist);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(74,41,201,.16)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+
+/* TOP BAR */
+.topbar{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{width:34px;height:34px;border-radius:9px;background:var(--grad);display:grid;place-items:center;color:#fff;font-size:15px;box-shadow:0 6px 16px -6px rgba(74,41,201,.55)}
+.brand-txt{display:flex;flex-direction:column;line-height:1.08}
+.brand-txt small.bt-parent{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;color:var(--slate);font-weight:600;text-transform:uppercase}
+.brand-txt b{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:-.01em;display:block;line-height:1.1}
+.brand-txt small{font-size:11.5px;color:var(--slate)}
+.brand-txt i.bt-desc{font-style:normal;font-size:10px;color:var(--slate);margin-top:2px}
+.topbar-r{font-size:13px;color:var(--slate);display:flex;align-items:center;gap:18px}
+.topbar-r a{transition:color .2s}.topbar-r a:hover{color:var(--primary)}
+.topbar-r .tagline{color:var(--primary);font-weight:500}
+@media (max-width:720px){.topbar-r .tagline{display:none}}
+
+/* HERO */
+.hero{background:var(--white);border-bottom:1px solid var(--line);padding:64px 0 72px}
+.pill-tag{display:inline-flex;align-items:center;gap:7px;padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:var(--teal-tint);color:var(--primary);font-size:12.5px;font-weight:600;font-family:var(--mono);letter-spacing:.02em}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(38px,6vw,68px);line-height:1.03;letter-spacing:-.03em;margin:26px 0 0;max-width:13ch}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.hero p.sub{margin-top:26px;max-width:620px;font-size:clamp(16px,1.5vw,19px);color:var(--slate)}
+.hero p.count{margin-top:10px;font-weight:700;color:var(--ink);font-size:clamp(16px,1.5vw,19px)}
+.hero-stats{display:flex;gap:40px;flex-wrap:wrap;margin-top:38px;padding-top:30px;border-top:1px solid var(--line)}
+.hero-stat .n{font-family:var(--display);font-weight:800;font-size:30px}
+.hero-stat .l{font-size:12.5px;color:var(--slate);margin-top:2px;font-family:var(--mono)}
+
+/* FILTER BAR */
+.filterbar{background:rgba(247,249,252,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);position:sticky;top:64px;z-index:40;padding:18px 0}
+.filter-top{display:flex;gap:16px;align-items:center;margin-bottom:14px}
+.search{flex:1;position:relative;max-width:340px}
+.search input{width:100%;padding:11px 14px 11px 40px;border:1.5px solid var(--line);border-radius:11px;font-family:inherit;font-size:14px;background:#fff;transition:border-color .2s,box-shadow .2s}
+.search input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 4px rgba(74,41,201,.1)}
+.search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:17px;height:17px;color:var(--slate)}
+.result-count{font-size:13px;color:var(--slate);font-family:var(--mono);white-space:nowrap}
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+.pill{padding:7px 13px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:13px;font-weight:500;color:var(--graphite);cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.pill:hover{border-color:var(--primary);color:var(--primary)}
+.pill.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.pill .c{font-family:var(--mono);font-size:11px;color:var(--slate)}
+.pill.active .c{color:rgba(255,255,255,.6)}
+.pill--all.active{background:var(--grad);border-color:transparent}
+
+/* SECTIONS */
+main{padding:48px 0 80px}
+.cat-section{margin-bottom:64px;scroll-margin-top:170px}
+.cat-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:8px}
+.cat-head h2{font-family:var(--display);font-weight:800;font-size:clamp(22px,3vw,30px);letter-spacing:-.02em}
+.cat-head .pc{font-family:var(--mono);font-size:12.5px;color:var(--slate);letter-spacing:.04em;white-space:nowrap}
+.cat-blurb{color:var(--slate);font-size:14.5px;max-width:760px;margin-bottom:26px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.grid{grid-template-columns:1fr}.wrap{padding:0 20px}}
+
+/* CARD */
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s;min-height:230px}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:transparent}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:18px}
+.card-ic{width:38px;height:38px;border-radius:10px;background:var(--teal-tint);color:var(--primary);display:grid;place-items:center}
+.card-ic svg{width:20px;height:20px}
+.card-tag{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);text-align:right;max-width:130px;line-height:1.3}
+.status{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:600;padding:3px 9px;border-radius:999px;margin-top:6px;font-family:var(--mono);letter-spacing:.02em}
+.status .d{width:6px;height:6px;border-radius:50%}
+.st-live{background:rgba(31,180,122,.12);color:#0E8A57}.st-live .d{background:#1FB47A}
+.st-new{background:var(--teal-tint);color:var(--primary)}.st-new .d{background:var(--indigo)}
+.st-draft{background:rgba(255,176,32,.14);color:#B47A00}.st-draft .d{background:#FFB020}
+.st-plan{background:var(--cloud);color:var(--slate)}.st-plan .d{background:var(--slate)}
+.card h3{font-family:var(--display);font-weight:700;font-size:16.5px;line-height:1.3;letter-spacing:-.01em;margin-bottom:9px}
+.card p{font-size:13.5px;color:var(--slate);line-height:1.55;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:18px}
+.card .id{font-family:var(--mono);font-size:11px;color:#9AA7BD;letter-spacing:.06em}
+.card.linked{cursor:pointer}
+.card.linked:hover{border-color:var(--primary)}
+.card .view{font-size:12px;font-weight:600;color:var(--primary);display:inline-flex;align-items:center;gap:4px;opacity:.85;transition:gap .2s,opacity .2s;white-space:nowrap}
+.card.linked:hover .view{gap:8px;opacity:1}
+.card .soon{font-size:10.5px;color:#9AA7BD;font-family:var(--mono);letter-spacing:.04em}
+.kind-chip{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:600;font-family:var(--mono);letter-spacing:.04em;padding:3px 9px;border-radius:999px;margin-top:6px;border:1px solid var(--line);color:var(--primary);background:var(--teal-tint)}
+.kind-chip.k-doc{display:none}
+.card-top > div:last-child{display:flex;flex-direction:column;align-items:flex-end;gap:2px}
+.badge-detail{position:absolute;top:0;right:0}
+.card{position:relative}
+.empty{display:none;padding:60px 0;text-align:center;color:var(--slate)}
+.empty.show{display:block}
+
+/* FOOTER */
+footer{background:var(--ink);color:rgba(255,255,255,.6);padding:48px 0;font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
+footer .brand-txt b{color:#fff}
+footer a{color:rgba(255,255,255,.7)}footer a:hover{color:#fff}
+.disc{margin-top:18px;font-size:11.5px;color:rgba(255,255,255,.4);max-width:900px}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar"><div class="wrap">
+  <a class="brand" href="../index.html">
+    <span class="brand-mark">◐</span>
+    <span class="brand-txt"><small class="bt-parent">AIWO</small><b>Tribe</b></span>
+  </a>
+  <div class="topbar-r">
+    <span class="tagline">The complete go-to-market &amp; org pack</span>
+    <a href="../index.html">← Back to site</a>
+  </div>
+</div></div>
+
+<!-- HERO -->
+<section class="hero"><div class="wrap">
+  <span class="pill-tag">Collateral Pack v1</span>
+  <h1>Don't just run a programme. <span class="grad">Arm the whole company.</span></h1>
+  <p class="sub">The end-to-end sales, marketing, clinical, commercial, and organisational collateral pack for AIWO Tribe — everything a team needs to win the deal, launch the workforce, and scale measured longevity. Built to out-class every corporate wellness and healthcare programme in the world.</p>
+  <p class="count" id="countLine">— pieces across — categories.</p>
+  <div class="hero-stats" id="heroStats"></div>
+</div></section>
+
+<!-- FILTER BAR -->
+<div class="filterbar"><div class="wrap">
+  <div class="filter-top">
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input type="text" id="search" placeholder="Search 170+ collateral pieces…" aria-label="Search collateral" />
+    </div>
+    <span class="result-count" id="resultCount"></span>
+  </div>
+  <div class="pills" id="pills"></div>
+</div></div>
+
+<!-- SECTIONS -->
+<main><div class="wrap">
+  <div id="sections"></div>
+  <div class="empty" id="empty">No collateral matches your search. <a href="#" id="clearSearch" style="color:var(--primary);font-weight:600">Clear</a></div>
+</div></main>
+
+<footer><div class="wrap" style="display:block">
+  <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center">
+    <a class="brand" href="../index.html"><span class="brand-mark">◐</span><span class="brand-txt"><b>AIWO · Tribe</b><small style="color:rgba(255,255,255,.5)">Lengthen the joyspan. Prove it — year over year.</small></span></a>
+    <div>© 2026 AIWO · Internal &amp; partner collateral library</div>
+  </div>
+  <p class="disc">Internal / controlled. Outcomes are measured trajectories, not guarantees. Benchmarks are attributed; indicative figures are confirmed in proposal. Physician-reviewed, never "AI-diagnosed." Do not expose internal cost or margin in customer-facing pieces. Some items are illustrative and clearly labelled.</p>
+</div></footer>
+
+<script src="data/details.js"></script>
+<script>
+/* ---------- ICONS ---------- */
+const ICONS = {
+  doc:'<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/>',
+  deck:'<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>',
+  tag:'<path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="8" cy="8" r="1.5"/>',
+  print:'<path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-3a2 2 0 012-2h16a2 2 0 012 2v3a2 2 0 01-2 2h-2M6 14h12v8H6z"/>',
+  mail:'<path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z"/><path d="M22 6l-10 7L2 6"/>',
+  mega:'<path d="M3 11l18-5v12L3 14v-3zM11.6 16.8a3 3 0 11-5.8-1.6"/>',
+  beaker:'<path d="M9 2v6L4 18a2 2 0 002 3h12a2 2 0 002-3L15 8V2M8 2h8M7 14h10"/>',
+  shield:'<path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5z"/><path d="M9 12l2 2 4-4"/>',
+  users:'<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>',
+  phone:'<rect x="5" y="2" width="14" height="20" rx="3"/><path d="M12 18h.01"/>',
+  mic:'<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0014 0M12 19v3"/>',
+  hand:'<path d="M11 17l-4-4 1.5-1.5L11 14l5.5-5.5L18 10z"/><path d="M3 12a9 9 0 1018 0"/>',
+  gear:'<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.6 1.6 0 00-2.7 1.1V21a2 2 0 11-4 0v-.1A1.6 1.6 0 007 19.4a1.6 1.6 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.6 1.6 0 00-1.1-2.7H1a2 2 0 110-4h.1A1.6 1.6 0 004.6 7"/>',
+  brush:'<path d="M9.5 14.5L4 20s1 2 3 2 3-2 3-2M14 4l6 6M3 3l7 7 4-4-7-7z"/>',
+  video:'<path d="M23 7l-7 5 7 5V7zM1 5h15v14H1z"/>',
+  globe:'<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20 15 15 0 010-20"/>',
+  star:'<path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/>',
+  book:'<path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>',
+  chart:'<path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/>'
+};
+
+/* ---------- DATA ----------  item = [title, desc, status?]  (status default LIVE) */
+const CATS = [
+ {key:'TL', name:'Thought Leadership', icon:'doc', blurb:'Category-defining ideas that move the conversation from wellness activity to measured longevity outcomes.', items:[
+   ['Ebook — The Workforce Longevity Report 2026','The flagship reference on the under-measured workforce: organ ages, GLP-1, and the economics of proof.','LIVE'],
+   ['Ebook — From Wellness to Longevity','How a one-time health camp becomes a 12-month, measured, behaviour-change relationship.','LIVE'],
+   ['Whitepaper — Measuring What Matters','Why organ ages and a JoySpan trajectory beat steps, logins and webinar attendance.','LIVE'],
+   ['Whitepaper — The 90-Day Biology Cycle','The science and operating logic behind the SIIS perpetual quarterly cycle.','LIVE'],
+   ['Manifesto — We Don\'t Sell Tests. We Sell Outcomes.','The one-page belief statement that frames the whole category.','LIVE'],
+   ['Report — GLP-1 in the Indian Workforce','The metabolic shift already moving through your people — and the duty of care it creates.','NEW'],
+   ['POV — The Hidden Cost of an Under-Measured Workforce','Where productivity, continuity and retention value quietly leaks today.','LIVE'],
+   ['POV — What Boards Actually Want: Proof','Turning a wellbeing line item into a human-capital metric investors can read.','LIVE']
+ ]},
+ {key:'EB', name:'Executive & Board', icon:'deck', blurb:'Materials built for the room where the decision is made — vision, proof and the ask.', items:[
+   ['Board Deck — AIWO Tribe','The master board narrative: problem, system, proof, economics and the pilot ask.','LIVE'],
+   ['Executive Brief — One-Sitting Overview','The gated C-suite PDF — the idea, the proof and the ask in minutes.','LIVE'],
+   ['Investor Deck — Category & Unit Economics','Category creation, the three-framework moat, and the path to scale.','LIVE'],
+   ['Board Memo — The Duty-of-Care Case','A one-page memo positioning longevity as governance, not perk.','LIVE'],
+   ['One-Pager — The Ask','A 50–100 person pilot, fully managed, in weeks — the low-risk first step.','LIVE'],
+   ['Executive Summary — Board Edition','The standalone summary document for circulation ahead of the meeting.','LIVE']
+ ]},
+ {key:'SE', name:'Sales Enablement', icon:'deck', blurb:'Everything a rep needs to run a confident, evidence-led enterprise sales motion.', items:[
+   ['Sales Deck — Master','The full pitch: tension, the shift, the four frameworks, proof and pricing.','LIVE'],
+   ['Battlecard — vs Corporate Wellness Vendors','How measured outcomes out-position activity and engagement platforms.','LIVE'],
+   ['Battlecard — vs One-Time Health Camps','Why a 12-month measured relationship beats an annual diagnostic event.','LIVE'],
+   ['Objection-Handling Guide','Privacy, cost, science, employee fatigue — answered, with proof points.','LIVE'],
+   ['Discovery Question Bank','The questions that surface productivity, continuity and ESG pain.','LIVE'],
+   ['One-Pager — The Programme at a Glance','The single-sheet leave-behind: what it is, what\'s included, the outcome.','LIVE'],
+   ['Leave-Behind — The Four Frameworks','BioMAP → SIIS → LongeVis → JoySpan on one elegant page.','LIVE'],
+   ['Email Templates — Outbound Sequences','Persona-tuned cold and warm sequences for CEO, CHRO and CFO.','LIVE'],
+   ['Demo Script — The 12-Month Journey','A repeatable walkthrough of baseline → act → re-measure → prove.','DRAFT']
+ ]},
+ {key:'PP', name:'Pricing & Proposals', icon:'tag', blurb:'Transparent commercials and proposal tooling — without ever exposing internal cost or margin.', items:[
+   ['Pricing Sheet — Flagship / CXO / Membership / Core','The tier overview with the all-inclusive ₹30,000 flagship.','LIVE'],
+   ['Proposal Template — Enterprise Cohort','A fill-in proposal scoped to headcount, sector and rollout.','LIVE'],
+   ['ROI Framing Model','A directional value model — cost base addressed vs measured outcomes.','LIVE'],
+   ['Workforce Snapshot Estimator','The interactive tool: headcount + sector → directional risk view.','LIVE'],
+   ['What\'s-Included Matrix','The line-by-line tier comparison for procurement.','LIVE'],
+   ['Volume Terms Guide','How cohort pricing and wave commercials are structured.','DRAFT']
+ ]},
+ {key:'BR', name:'Brochures & Print', icon:'print', blurb:'Premium, quiet, expensive print pieces for leaders and on-site moments.', items:[
+   ['Corporate Brochure — 24pp','The full premium brochure: promise, frameworks, journey, value and pricing.','LIVE'],
+   ['Mini Brochure — 8pp','The condensed leave-behind for events and meetings.','LIVE'],
+   ['Capabilities Folder','A leadership folder with modular insert sheets.','LIVE'],
+   ['Pilot Pack Insert','The single insert that frames the pilot offer.','LIVE'],
+   ['Pocket Guide — The 11+1 Pillars','A take-away card explaining the LongeVis Matrix.','LIVE']
+ ]},
+ {key:'EM', name:'Email & Nurture', icon:'mail', blurb:'Lifecycle journeys that turn interest into pilots and pilots into rollouts.', items:[
+   ['Nurture Sequence — People Leaders','A multi-touch journey for CHROs and Heads of Benefits.','LIVE'],
+   ['Nurture Sequence — Finance & Procurement','Value, governance and pricing for the CFO track.','LIVE'],
+   ['Newsletter — The Longevity Brief','The monthly thought-leadership send for people leaders.','LIVE'],
+   ['Pilot Invitation Email','The high-intent invite to book a managed pilot.','LIVE'],
+   ['Post-Demo Follow-up Series','Recap, proof and next-step automation after a demo.','LIVE'],
+   ['Re-engagement / Win-back Series','Reviving stalled opportunities with new proof.','DRAFT'],
+   ['Event Invite & Reminder Set','Registration, reminder and follow-up emails for webinars.','LIVE']
+ ]},
+ {key:'AD', name:'Advertising & Social', icon:'mega', blurb:'Vibrant-but-professional creative that earns attention from senior buyers.', items:[
+   ['LinkedIn Carousel — Organ Ages Explained','"Your heart is 8 years older than you are" — the scroll-stopper.','LIVE'],
+   ['LinkedIn Post Library (×12)','A quarter of thought-leadership posts for leaders and founders.','LIVE'],
+   ['Display Ad Set — Productivity','Banner creative framed on protecting output.','LIVE'],
+   ['Display Ad Set — Retention','Creative for the "hard to leave" retention story.','LIVE'],
+   ['Display Ad Set — GLP-1 Duty of Care','Creative for the metabolic-era care narrative.','NEW'],
+   ['Video Ad — 30s Brand Film','Storyboard and script for the hero brand spot.','DRAFT'],
+   ['Retargeting Ad Set','Mid-funnel creative driving to the pilot page.','LIVE'],
+   ['Founder POV Post Pack','Personal-voice posts for executive thought leadership.','LIVE'],
+   ['Messaging & Hashtag Guide','The shared language for paid and organic social.','LIVE']
+ ]},
+ {key:'CS', name:'Case Studies & Proof', icon:'chart', blurb:'Evidence assets — illustrative until live references mature, always clearly labelled.', items:[
+   ['Case Study — Technology Workforce','A 2,400-person cohort, baseline to a year-one trajectory (illustrative).','LIVE'],
+   ['Case Study — Financial Services','Critical-role de-risking across a leadership cohort (illustrative).','DRAFT'],
+   ['Case Study Template','The reusable context → cohort → measured → trajectory → results layout.','LIVE'],
+   ['Proof Pack — Outcomes & KPIs','The KPI master scorecard and north-star trajectory in one asset.','LIVE'],
+   ['Employer Dashboard Walkthrough','A guided tour of the privacy-safe aggregate dashboard.','LIVE'],
+   ['Testimonial Reel — Script & Kit','The framework for capturing leader and member testimonials.','PLANNED']
+ ]},
+ {key:'CL', name:'Clinical & Scientific', icon:'beaker', blurb:'The rigour that earns the trust of CMOs, clinicians and scientifically literate buyers.', items:[
+   ['Evidence Pack — The Clinical Model','The gated, attributed evidence dossier behind the programme.','LIVE'],
+   ['BioMAP Panel Science Explainer','The 200+ markers → 7 panels → organ ages story, made simple.','LIVE'],
+   ['Organ-Age Methodology Note','How 8–10 organ ages are computed and interpreted.','LIVE'],
+   ['Clinical Governance Charter','Named physician sign-off, completeness gate and oversight model.','LIVE'],
+   ['Physician Sign-off Protocol','The hard-gate process before any report is released.','LIVE'],
+   ['Same-Day Critical-Value Pathway','The defined escalation and triage pathway for critical findings.','LIVE'],
+   ['Claims & Language Discipline Guide','"200+", "trajectories not guarantees", "never AI-diagnosed."','LIVE']
+ ]},
+ {key:'PV', name:'Privacy, Security & Trust', icon:'shield', blurb:'Privacy made visible — the architecture that turns a concern into an adoption driver.', items:[
+   ['DPDPA Notice — Employee-Facing','Plain-language data notice for enrolled employees.','LIVE'],
+   ['Trust Centre One-Pager','Controls, certifications roadmap and the data boundary, summarised.','LIVE'],
+   ['Security & Compliance FAQ','The answers IT, legal and risk committees ask.','LIVE'],
+   ['Data-Flow & Single-Channel Diagram','How results reach the individual — and never the employer.','LIVE'],
+   ['Consent Form & Script','The hard-stop consent flow: no consent, no draw.','LIVE'],
+   ['Sub-Processor Register','The maintained list for procurement and DPAs.','LIVE']
+ ]},
+ {key:'ON', name:'Employee Onboarding & Comms', icon:'users', blurb:'The launch kit that drives enrolment, trust and turnout on camp day.', items:[
+   ['Enrollment Kit','Everything to invite, consent and schedule a workforce.','LIVE'],
+   ['Launch Announcement — From the CEO','The leadership email that signals it matters (the #1 driver).','LIVE'],
+   ['Programme FAQ — Employee','What it is, what\'s in it for me, and is it private.','LIVE'],
+   ['Consent & Privacy Explainer','A friendly walk-through of the privacy promise.','LIVE'],
+   ['Camp-Day Guide — What to Expect','The 20-minute draw, demystified.','LIVE'],
+   ['Welcome Pack','The first-touch experience for newly enrolled members.','LIVE'],
+   ['On-Site Poster & Signage Set','Wayfinding and reassurance for the camp.','LIVE'],
+   ['Manager Talking Points','A short script so managers can answer team questions.','DRAFT']
+ ]},
+ {key:'AP', name:'Member Experience & App', icon:'phone', blurb:'Guides that make the LifeOS app and the year of change effortless to use.', items:[
+   ['LifeOS App Guide','A tour of Home/JoySpan, My Report, Pillars and Community.','LIVE'],
+   ['Smart Report Reading Guide','How to read your JoySpan Score, organ ages and panels.','LIVE'],
+   ['Supplement Starter Pack Guide','From deficiency to physician-confirmed pack at your door.','LIVE'],
+   ['Pillar Action Cards (11+1)','One card per pillar with the actions that move the score.','LIVE'],
+   ['JoySpan Live & Community Guide','Masterclasses, challenges and cohort belonging.','LIVE'],
+   ['Quarterly Re-test Reminder Kit','Nudges and comms for the 3 / 6 / 9-month re-measures.','LIVE']
+ ]},
+ {key:'HR', name:'Manager & HR Enablement', icon:'users', blurb:'The operating kit that lets People teams run the programme like pros.', items:[
+   ['Rollout Playbook — HR','The end-to-end internal launch plan, week by week.','LIVE'],
+   ['Wellness Champion Kit','Recruit and equip internal champions across sites.','LIVE'],
+   ['Internal Comms Calendar','A 12-month cadence of nudges, masterclasses and milestones.','LIVE'],
+   ['Leadership Participation Guide','Why leaders going first is the #1 engagement driver.','LIVE'],
+   ['Engagement Toolkit','Challenges, rewards and recognition mechanics.','LIVE'],
+   ['HR FAQ','Answers for the People team\'s own questions.','LIVE'],
+   ['Manager Briefing Deck','A short deck to align line managers before launch.','DRAFT']
+ ]},
+ {key:'IN', name:'Industry Playbooks', icon:'book', blurb:'Sector-tuned narratives, risks and rollout patterns for vertical sales.', items:[
+   ['Technology & GCCs Playbook','Talent markets, sedentary risk, and the differentiated benefit.','LIVE'],
+   ['Financial Services Playbook','Critical-role de-risking and governance-grade reporting.','LIVE'],
+   ['Manufacturing & Energy Playbook','Distributed, older workforces and multi-site wave delivery.','LIVE'],
+   ['Healthcare & Pharma Playbook','Physician-led rigour for clinically literate staff.','LIVE'],
+   ['Professional Services Playbook','Protecting the human capital that is the product.','LIVE'],
+   ['Public Sector Playbook','Transparent, aggregate, year-over-year accountability.','DRAFT']
+ ]},
+ {key:'OP', name:'Outcome Playbooks', icon:'book', blurb:'Outcome-first sales narratives mapped to what each buyer must defend.', items:[
+   ['Productivity Protection Playbook','Catch decline before it costs output.','LIVE'],
+   ['Critical-Role De-risking Playbook','Protect the few people who carry the most value.','LIVE'],
+   ['Retention & Culture Playbook','A measurable investment that\'s hard to leave.','LIVE'],
+   ['GLP-1 Duty of Care Playbook','Objective baselines and oversight for the metabolic shift.','LIVE'],
+   ['ESG & Wellbeing Reporting Playbook','A board- and investor-legible trajectory.','LIVE']
+ ]},
+ {key:'EV', name:'Events & Webinars', icon:'mic', blurb:'Everything to run a credible C-suite event, online or in the room.', items:[
+   ['Webinar Kit — Measured Longevity for the C-Suite','Run-of-show, slides, promo and follow-up.','LIVE'],
+   ['Conference Booth Kit','Stand design, demo flow and lead-capture.','LIVE'],
+   ['Executive Roundtable Guide','A facilitated discussion format for senior leaders.','LIVE'],
+   ['Speaker Deck Template','A branded talk template for stage and webinar.','LIVE'],
+   ['Event Follow-up Pack','Recap, assets and next-step automation.','LIVE'],
+   ['CXO Dinner / Salon Kit','An intimate, high-trust acquisition format.','DRAFT']
+ ]},
+ {key:'PRM', name:'PR & Media', icon:'mega', blurb:'The press and narrative assets that build category authority.', items:[
+   ['Press Kit / Media Kit','Boilerplate, facts, imagery and contacts.','LIVE'],
+   ['Launch Press Release','The category and programme announcement.','LIVE'],
+   ['Founder Bios & Headshots','Approved bios and assets for spokespeople.','LIVE'],
+   ['Media FAQ & Messaging','On-message answers for journalists.','LIVE'],
+   ['Spokesperson Briefing','Prep for interviews and panels.','DRAFT'],
+   ['Award Submission Templates','Reusable entries for wellbeing and innovation awards.','PLANNED']
+ ]},
+ {key:'CH', name:'Partner & Channel', icon:'hand', blurb:'Enablement for labs, brokers and resellers who extend the programme\'s reach.', items:[
+   ['Lab Partner Onboarding Kit','Standards, QC and integration for accredited labs.','LIVE'],
+   ['Reseller / Broker Enablement Kit','Pitch, pricing and process for benefit intermediaries.','LIVE'],
+   ['Co-Branding Guidelines','How partners present AIWO correctly.','LIVE'],
+   ['Referral Programme One-Pager','The terms and mechanics of referrals.','LIVE'],
+   ['Partner Pitch Deck','The deck partners use to sell the programme.','DRAFT'],
+   ['Channel Margin & Terms Sheet','Internal-controlled commercial structure.','PLANNED']
+ ]},
+ {key:'DL', name:'Delivery & Operations', icon:'gear', blurb:'The SOPs that let the programme run for 5,000 people, identically.', items:[
+   ['Wave Model SOP','Pilot → weekly waves of ~1,250 at ~280 draws/day.','LIVE'],
+   ['Camp Operations Playbook','Stations, flow and staffing for the on-site camp.','LIVE'],
+   ['Barcode Double-Scan QC Protocol','The red-threshold quality control on every draw.','LIVE'],
+   ['Cold-Chain & Logistics Guide','Validated handling from draw to lab.','LIVE'],
+   ['Certification & Academy Curriculum','The 100%-certified-before-a-live-wave standard.','LIVE'],
+   ['Reconciliation Dashboard Guide','Tracking up to 5,000 personalised dispatches.','LIVE'],
+   ['Incident Response Runbook','The data-incident posture: red threshold > zero.','DRAFT']
+ ]},
+ {key:'BD', name:'Brand & Identity', icon:'brush', blurb:'The system that keeps every piece unmistakably AIWO.', items:[
+   ['Brand Guidelines','Logo, spacing, do/don\'t and applications.','LIVE'],
+   ['Logo & Wordmark Kit','All approved marks and clear-space rules.','LIVE'],
+   ['Colour & Type System','The "Longevity Spectrum" palette and Sora/Inter scale.','LIVE'],
+   ['Tone of Voice Guide','Confident, clear, evidence-led, humane — hope not fear.','LIVE'],
+   ['Iconography & Illustration Library','The custom line set and data-meets-biology motifs.','LIVE'],
+   ['Templates Pack','Branded slide, doc and one-pager templates.','LIVE']
+ ]},
+ {key:'VD', name:'Video & Motion', icon:'video', blurb:'Motion that explains a sophisticated programme simply.', items:[
+   ['Brand Film Script (90s)','The hero film: from a test to a trajectory.','DRAFT'],
+   ['Explainer — The SIIS Cycle','Animation brief for the signature 90-day loop.','LIVE'],
+   ['Testimonial Film Kit','Capture framework for leader and member stories.','PLANNED'],
+   ['Product Walkthrough — LifeOS','A screen-capture tour of the member app.','DRAFT'],
+   ['Social Cutdowns Pack','15s and 6s edits for paid and organic.','PLANNED']
+ ]},
+ {key:'WB', name:'Web & Landing Pages', icon:'globe', blurb:'The digital surfaces that convert senior buyers into pilot conversations.', items:[
+   ['Home Flagship Page','The full narrative site experience.','LIVE'],
+   ['Programme Overview Page','Frameworks, journey and BioMAP in one page.','LIVE'],
+   ['Pilot Landing Page','The high-intent conversion page and form.','LIVE'],
+   ['Industry × Outcome Landing Matrix','Programmatic pages for vertical search intent.','PLANNED'],
+   ['Workforce Snapshot Tool','The interactive directional estimator.','LIVE'],
+   ['Trust Centre Page','The privacy, security and compliance hub.','LIVE']
+ ]},
+ {key:'DM', name:'Direct Mail & OOH', icon:'print', blurb:'High-touch physical media for hard-to-reach executives.', items:[
+   ['Executive Direct-Mail Pack','A premium mailer that earns a meeting.','DRAFT'],
+   ['CXO Pilot-Invite Box','A considered gift-box invitation to pilot.','PLANNED'],
+   ['Airport & Lounge OOH','Brand presence where executives travel.','PLANNED'],
+   ['Office-Tower Lobby OOH','Placements in GCC and corporate campuses.','PLANNED'],
+   ['Conference Print Ads','Programme guide and signage placements.','DRAFT']
+ ]},
+ {key:'TS', name:'Trust & Social Proof', icon:'star', blurb:'The credibility layer — clearly labelled where illustrative.', items:[
+   ['Client Roster / Logo Wall Template','A privacy-respecting reference display.','LIVE'],
+   ['Testimonial Library','Approved quotes by persona and outcome.','DRAFT'],
+   ['Certifications & Badges Sheet','DPDPA-aligned · ISO 27001 / SOC-2 roadmap.','LIVE'],
+   ['Press & Analyst Mentions Sheet','Curated third-party validation.','PLANNED'],
+   ['Outcomes Snapshot Infographic','The proof story in one shareable visual.','LIVE']
+ ]},
+ {key:'RK', name:'C-Suite Role Kits', icon:'users', blurb:'A tailored bundle of the right assets for each decision-maker.', items:[
+   ['Kit — For the CEO & Board','Vision, proof and the ask, curated.','LIVE'],
+   ['Kit — For HR & People','Experience, engagement and trust.','LIVE'],
+   ['Kit — For Finance & Procurement','Pricing, value and governance.','LIVE'],
+   ['Kit — For the CMO / Wellbeing Lead','Science and clinical governance.','LIVE']
+ ]},
+ {key:'GL', name:'Reference & Index', icon:'book', blurb:'The shared language and the map to every asset in this pack.', items:[
+   ['Glossary — JoySpan, BioMAP, SIIS, LongeVis','The defined vocabulary of measured longevity.','LIVE'],
+   ['Messaging House','Roof, pillars and proof points — the message architecture.','LIVE'],
+   ['Collateral Index & Usage Guide','What each asset is for, and where it fits the funnel.','LIVE']
+ ]}
+];
+
+/* ---------- RENDER ---------- */
+const STATUS = {LIVE:['st-live','Live'],NEW:['st-new','New'],DRAFT:['st-draft','Draft'],PLANNED:['st-plan','Planned']};
+const sectionsEl = document.getElementById('sections');
+const pillsEl = document.getElementById('pills');
+let totalPieces = 0;
+CATS.forEach(c=>{ totalPieces += c.items.length; c.items.forEach((it,i)=>{ it._id = c.key+'-'+String(i+1).padStart(2,'0'); }); });
+
+document.getElementById('countLine').innerHTML = '<b>'+totalPieces+' pieces</b> across <b>'+CATS.length+' categories</b> — end-to-end, sales to org floor.';
+document.getElementById('search').placeholder = 'Search '+totalPieces+' collateral pieces…';
+
+/* hero stats */
+let detailedCount=0; CATS.forEach(c=>c.items.forEach(it=>{ if(window.AIWO_DETAILS && window.AIWO_DETAILS[it._id]) detailedCount++; }));
+document.getElementById('heroStats').innerHTML = [
+  ['n', totalPieces, 'Total pieces'],
+  ['n', CATS.length, 'Categories'],
+  ['n', detailedCount, 'Detailed briefs built'],
+  ['n', '28', 'Funnel stages covered']
+].map(s=>'<div class="hero-stat"><div class="n grad">'+s[1]+'</div><div class="l">'+s[2]+'</div></div>').join('');
+
+/* pills */
+let pillHtml = '<button class="pill pill--all active" data-cat="all">All <span class="c">'+totalPieces+'</span></button>';
+CATS.forEach(c=>{ pillHtml += '<button class="pill" data-cat="'+c.key+'">'+c.name+' <span class="c">'+c.items.length+'</span></button>'; });
+pillsEl.innerHTML = pillHtml;
+
+/* sections */
+sectionsEl.innerHTML = CATS.map(c=>{
+  const cards = c.items.map(it=>{
+    const st = STATUS[it[2]||'LIVE'];
+    const detailed = !!(window.AIWO_DETAILS && window.AIWO_DETAILS[it._id]);
+    const kind = window.AIWO_KIND ? window.AIWO_KIND(it[0]) : 'doc';
+    const km = (window.AIWO_KIND_META||{})[kind] || {label:'',glyph:''};
+    const kindChip = '<span class="kind-chip k-'+kind+'">'+km.glyph+' '+km.label+'</span>';
+    const foot = detailed
+      ? '<span class="id">ID: '+it._id+'</span><span class="view">Open asset →</span>'
+      : '<span class="id">ID: '+it._id+'</span><span class="soon">Brief in production</span>';
+    return '<article class="card'+(detailed?' linked':'')+'" data-text="'+(it[0]+' '+it[1]+' '+it._id+' '+km.label).toLowerCase().replace(/"/g,'')+'"'+(detailed?' onclick="location.href=\'piece.html?id='+it._id+'\'"':'')+'>'+
+      '<div class="card-top"><div class="card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">'+ICONS[c.icon]+'</svg></div>'+
+      '<div><div class="card-tag">'+c.name+'</div><span class="status '+st[0]+'"><span class="d"></span>'+st[1]+'</span>'+kindChip+'</div></div>'+
+      '<h3>'+it[0]+'</h3><p>'+it[1]+'</p><div class="card-foot">'+foot+'</div></article>';
+  }).join('');
+  return '<section class="cat-section" id="cat-'+c.key+'" data-cat="'+c.key+'">'+
+    '<div class="cat-head"><h2>'+c.name+'</h2><span class="pc">'+c.items.length+' PIECES</span></div>'+
+    '<p class="cat-blurb">'+c.blurb+'</p>'+
+    '<div class="grid">'+cards+'</div></section>';
+}).join('');
+
+/* ---------- INTERACTIONS ---------- */
+let activeCat = 'all';
+const searchEl = document.getElementById('search');
+const resultCount = document.getElementById('resultCount');
+const emptyEl = document.getElementById('empty');
+
+function apply(){
+  const q = searchEl.value.trim().toLowerCase();
+  let shown = 0;
+  document.querySelectorAll('.cat-section').forEach(sec=>{
+    const catMatch = (activeCat==='all' || sec.dataset.cat===activeCat);
+    let secShown = 0;
+    sec.querySelectorAll('.card').forEach(card=>{
+      const txt = card.dataset.text;
+      const match = catMatch && (!q || txt.indexOf(q)>-1);
+      card.style.display = match ? '' : 'none';
+      if(match) secShown++;
+    });
+    sec.style.display = secShown ? '' : 'none';
+    shown += secShown;
+  });
+  resultCount.textContent = shown + (shown===1?' piece':' pieces');
+  emptyEl.classList.toggle('show', shown===0);
+}
+
+pillsEl.addEventListener('click', e=>{
+  const btn = e.target.closest('.pill'); if(!btn) return;
+  activeCat = btn.dataset.cat;
+  document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  apply();
+  if(activeCat!=='all'){ const t=document.getElementById('cat-'+activeCat); if(t){ const y=t.getBoundingClientRect().top+window.pageYOffset-150; window.scrollTo({top:y,behavior:'smooth'}); } }
+  else { window.scrollTo({top:document.querySelector('main').offsetTop-120,behavior:'smooth'}); }
+});
+searchEl.addEventListener('input', apply);
+document.getElementById('clearSearch').addEventListener('click', e=>{ e.preventDefault(); searchEl.value=''; activeCat='all'; document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active')); document.querySelector('.pill--all').classList.add('active'); apply(); });
+
+apply();
+</script>
+</body>
+</html>
