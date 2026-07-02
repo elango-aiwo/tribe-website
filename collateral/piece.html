@@ -253,7 +253,7 @@ footer .wrap{max-width:1180px}
   <p class="disc">Internal / controlled. Outcomes are measured trajectories, not guarantees. Benchmarks are attributed; indicative figures are confirmed in proposal. Physician-reviewed, never "AI-diagnosed." Do not expose internal cost or margin in customer-facing pieces. Designed previews are templates — finalise in brand tooling before production. © 2026 AIWO.</p>
 </div></footer>
 
-<script src="data/details.js"></script>
+<script src="data/details.js?v=2"></script>
 <script>
 /* ---------- icons ---------- */
 const ICONS={doc:'<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/>',deck:'<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>',tag:'<path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="8" cy="8" r="1.5"/>',print:'<path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-3a2 2 0 012-2h16a2 2 0 012 2v3a2 2 0 01-2 2h-2M6 14h12v8H6z"/>',mail:'<path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z"/><path d="M22 6l-10 7L2 6"/>',mega:'<path d="M3 11l18-5v12L3 14v-3zM11.6 16.8a3 3 0 11-5.8-1.6"/>',beaker:'<path d="M9 2v6L4 18a2 2 0 002 3h12a2 2 0 002-3L15 8V2M8 2h8M7 14h10"/>',shield:'<path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5z"/><path d="M9 12l2 2 4-4"/>',users:'<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>',phone:'<rect x="5" y="2" width="14" height="20" rx="3"/><path d="M12 18h.01"/>',mic:'<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0014 0M12 19v3"/>',hand:'<path d="M11 17l-4-4 1.5-1.5L11 14l5.5-5.5L18 10z"/><path d="M3 12a9 9 0 1018 0"/>',gear:'<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.6 1.6 0 00-2.7 1.1V21a2 2 0 11-4 0v-.1A1.6 1.6 0 007 19.4a1.6 1.6 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.6 1.6 0 00-1.1-2.7H1a2 2 0 110-4h.1A1.6 1.6 0 004.6 7"/>',brush:'<path d="M9.5 14.5L4 20s1 2 3 2 3-2 3-2M14 4l6 6M3 3l7 7 4-4-7-7z"/>',video:'<path d="M23 7l-7 5 7 5V7zM1 5h15v14H1z"/>',globe:'<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20 15 15 0 010-20"/>',star:'<path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/>',book:'<path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>',chart:'<path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/>'};
@@ -271,6 +271,9 @@ const pdf='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-wid
 const kindMeta=(window.AIWO_KIND_META||{});
 
 function RP(p,cap){return window.AIWO_RESOLVE_PROOF?window.AIWO_RESOLVE_PROOF(p,cap):(p.proof||[]).slice(0,cap||4);}
+function RM(p,cap){return window.AIWO_RESOLVE_MSGS?window.AIWO_RESOLVE_MSGS(p,cap):(p.messages||[]).slice(0,cap||4);}
+function RU(p){return window.AIWO_RESOLVE_USAGE?window.AIWO_RESOLVE_USAGE(p):(p.usage||'');}
+function CTX(p){return (window.AIWO_CONTEXT||{})[p.catKey]||'';}
 function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800);}
 function download(name,text,mime){const b=new Blob([text],{type:(mime||'text/markdown')+';charset=utf-8'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1500);toast('Downloaded '+name);}
@@ -298,11 +301,12 @@ function toMarkdown(p){
   if(p.audience) L.push('**Audience:** '+p.audience.join(', '));
   if(p.channels) L.push('**Channels:** '+p.channels.join(', '));
   L.push('');L.push('## Overview');L.push(p.overview||'');
+  var _ctx=CTX(p); if(_ctx){L.push('');L.push('## Where it fits');L.push(_ctx);}
   if(p.contents&&p.contents.length){L.push('');L.push('## Structure & contents');p.contents.forEach(c=>{L.push('');L.push('### '+c.heading);L.push(c.body);});}
-  if(p.messages&&p.messages.length){L.push('');L.push('## Key messages');p.messages.forEach(m=>L.push('- '+m));}
+  var _msgs=RM(p,4);if(_msgs.length){L.push('');L.push('## Key messages');_msgs.forEach(m=>L.push('- '+m));}
   var _proof=RP(p,4);if(_proof.length){L.push('');L.push('## Proof points');_proof.forEach(m=>L.push('- '+m));}
   if(p.specs){L.push('');L.push('## Specs');Object.entries(p.specs).forEach(([k,v])=>L.push('- **'+k+':** '+v));}
-  if(p.usage){L.push('');L.push('## Usage & claims discipline');L.push(p.usage);}
+  var _use=RU(p);if(_use){L.push('');L.push('## Usage & claims discipline');L.push(_use);}
   if(p.related&&p.related.length){L.push('');L.push('## Related collateral');p.related.forEach(r=>{const x=D[r];L.push('- '+r+(x?' — '+x.title:''));});}
   L.push('');L.push('---');L.push('_AIWO Tribe collateral. Outcomes are measured trajectories, not guarantees._');
   return L.join('\n');
@@ -311,7 +315,7 @@ function buildSlides(p){
   const s=[{kind:'title'}];
   if(p.overview) s.push({kind:'content',eyebrow:'Context',heading:'The opportunity',body:p.overview});
   (p.contents||[]).forEach(c=>s.push({kind:'content',eyebrow:p.cat,heading:c.heading,body:c.body}));
-  if(p.messages&&p.messages.length) s.push({kind:'list',cls:'msg',eyebrow:'Key messages',heading:'What it says',items:p.messages});
+  var _ms=RM(p,4); if(_ms.length) s.push({kind:'list',cls:'msg',eyebrow:'Key messages',heading:'What it says',items:_ms});
   var _pf=RP(p,4); if(_pf.length) s.push({kind:'list',eyebrow:'Proof points',heading:'What backs it up',items:_pf});
   s.push({kind:'cta'});
   return s;
@@ -391,10 +395,11 @@ function docHTML(p){
   const L='<div class="docpage"><div class="d-head"><span class="m">◐</span><div><div style="font-family:var(--display);font-weight:800">AIWO · Tribe</div><div style="font-family:var(--mono);font-size:11px;color:var(--slate)">'+p.cat+' · '+id+'</div></div></div>'+
     '<h1>'+esc(p.title)+'</h1><div class="d-tag">'+esc(p.tagline||'')+'</div>'+
     '<h2>Overview</h2><p>'+esc(p.overview||'')+'</p>'+
+    (CTX(p)?'<h2>Where it fits</h2><p>'+esc(CTX(p))+'</p>':'')+
     '<h2>Structure &amp; contents</h2>'+(p.contents||[]).map(c=>'<p><b>'+esc(c.heading)+'.</b> '+esc(c.body)+'</p>').join('')+
-    '<h2>Key messages</h2><ul>'+(p.messages||[]).map(m=>'<li>'+esc(m)+'</li>').join('')+'</ul>'+
-    '<h2>Proof points</h2><ul>'+(p.proof||[]).map(m=>'<li>'+esc(m)+'</li>').join('')+'</ul>'+
-    '<h2>Usage &amp; claims discipline</h2><p>'+esc(p.usage||'')+'</p>'+
+    '<h2>Key messages</h2><ul>'+RM(p,4).map(m=>'<li>'+esc(m)+'</li>').join('')+'</ul>'+
+    '<h2>Proof points</h2><ul>'+RP(p,4).map(m=>'<li>'+esc(m)+'</li>').join('')+'</ul>'+
+    '<h2>Usage &amp; claims discipline</h2><p>'+esc(RU(p))+'</p>'+
     '<p style="margin-top:30px;font-size:11px;color:var(--slate)">Outcomes are measured trajectories, not guarantees. Physician-reviewed, never "AI-diagnosed." © 2026 AIWO.</p></div>';
   return L;
 }
@@ -424,8 +429,9 @@ if(!p){
   const st=STATUS[p.status||'LIVE'];
   const meta=[['Asset type',km.label],['Stage',p.stage],['Format',p.format],['Audience',(p.audience||[]).join(' · ')],['Channels',(p.channels||[]).join(' · ')]].filter(m=>m[1]).map(m=>'<div class="meta-item"><div class="ml">'+m[0]+'</div><div class="mv">'+esc(m[1])+'</div></div>').join('');
   const contents=(p.contents||[]).map(c=>'<div class="c-item"><h4>'+esc(c.heading)+'</h4><p>'+esc(c.body)+'</p></div>').join('');
-  const messages=(p.messages||[]).map(m=>'<li>'+spark+'<span>'+esc(m)+'</span></li>').join('');
+  const messages=RM(p,4).map(m=>'<li>'+spark+'<span>'+esc(m)+'</span></li>').join('');
   const proof=RP(p,4).map(m=>'<li>'+check+'<span>'+esc(m)+'</span></li>').join('');
+  const ctxHTML=CTX(p)?'<div class="section"><span class="eyebrow">Where it fits</span><h2>In the system &amp; funnel</h2><p>'+esc(CTX(p))+'</p></div>':'';
   const specRows=Object.entries(p.specs||{}).map(([k,v])=>'<div class="spec-row"><span class="k">'+k+'</span><span class="v">'+esc(v)+'</span></div>').join('');
   const cta=p.cta||{label:'Book a Pilot',href:'../book.html'};
   const slides=buildSlides(p);
@@ -467,10 +473,11 @@ if(!p){
   '<main><div class="wrap"><div class="layout"><div class="content">'+
     preview+
     (p.overview?'<div class="section"><span class="eyebrow">What it is</span><h2>Overview</h2><p>'+esc(p.overview)+'</p></div>':'')+
+    ctxHTML+
     (contents?'<div class="section"><span class="eyebrow">What\'s inside</span><h2>Structure &amp; contents</h2><div class="contents">'+contents+'</div></div>':'')+
     (messages?'<div class="section"><span class="eyebrow">Key messages</span><h2>What it says</h2><ul class="msg-list">'+messages+'</ul></div>':'')+
     (proof?'<div class="section"><span class="eyebrow">Proof points</span><h2>What backs it up</h2><ul class="proof-list">'+proof+'</ul></div>':'')+
-    (p.usage?'<div class="section"><div class="callout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><div><div class="cl-label">How to use it · claims discipline</div><p>'+esc(p.usage)+'</p></div></div></div>':'')+
+    (RU(p)?'<div class="section"><div class="callout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><div><div class="cl-label">How to use it · claims discipline</div><p>'+esc(RU(p))+'</p></div></div></div>':'')+
   '</div><aside class="aside">'+
     '<div class="acard"><h5>Exports</h5>'+
       (kind==='deck'?'<button class="exp-btn exp-primary" onclick="EXP.deckMd()">'+dl+' Slide content (.md)</button><button class="exp-btn exp-ghost" onclick="EXP.deckPdf()">'+pdf+' Deck PDF</button>':

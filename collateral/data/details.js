@@ -171,7 +171,7 @@ window.AIWO_DETAILS = {
 
 "TL-06": {
   title: "Report — GLP-1 in the Indian Workforce",
-  cat: "Thought Leadership", catKey: "TL", icon: "doc", status: "NEW",
+  cat: "Thought Leadership", catKey: "TL", icon: "doc", status: "LIVE",
   tagline: "The metabolic shift already moving through your people — and the duty of care it creates.",
   stage: "Awareness → Consideration",
   format: "Gated PDF · ~30 pages",
@@ -582,7 +582,7 @@ window.AIWO_DETAILS = {
  contents:[{heading:"Measurement",body:"Panel size, BioMAP panels, organ ages, scores by tier."},{heading:"Plan & experience",body:"Smart Report, app, supplements, re-tests."},{heading:"Enterprise",body:"Aggregate dashboard, governance, consent."},{heading:"Price",body:"Indicative per-employee figure by tier."}],
  messages:["Compare the tiers line by line.","No hidden add-ons in the flagship."], proof:["Flagship all-inclusive; CXO add-ons itemised"],
  specs:{Format:"Table",Length:"1 page",Owner:"Commercial",Stage:"Decision",Cadence:"Per price review"},
- usage:"Mirror the live pricing page matrix; keep figures indicative.", related:["PP-01","PP-02"], cta:{label:"Compare on the pricing page",href:"../pricing.html#compare"} },
+ usage:"Mirror the live pricing page matrix; keep figures indicative.", related:["PP-01","PP-02","RK-03"], cta:{label:"Compare on the pricing page",href:"../pricing.html#compare"} },
 
 "PP-06": { title:"Volume Terms Guide", cat:"Pricing & Proposals", catKey:"PP", icon:"tag", status:"LIVE",
  tagline:"How cohort pricing and wave commercials are structured.", stage:"Decision",
@@ -749,7 +749,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"Display",Length:"Full set",Owner:"Growth + Brand",Stage:"Top–mid",Cadence:"Per campaign"},
  usage:"Drive to the retention outcome; keep tone aspirational, not fearful.", related:["AD-03","OP-03","IN-01"], cta:{label:"Explore retention",href:"../solutions.html#outcomes"} },
 
-"AD-05": { title:"Display Ad Set — GLP-1 Duty of Care", cat:"Advertising & Social", catKey:"AD", icon:"mega", status:"NEW",
+"AD-05": { title:"Display Ad Set — GLP-1 Duty of Care", cat:"Advertising & Social", catKey:"AD", icon:"mega", status:"LIVE",
  tagline:"Creative for the metabolic-era care narrative.", stage:"Awareness → Consideration",
  format:"Display + social set", audience:["CMO / Wellbeing","CHRO","CEO"], channels:["Display","LinkedIn","Programmatic"],
  overview:"A timely creative set on the GLP-1 duty of care — turning an emerging, sensitive workforce shift into demonstrable care through objective baselines and physician oversight. Built with extra care on tone and claims.",
@@ -1918,4 +1918,119 @@ window.AIWO_RESOLVE_PROOF = function(p, cap){
     if(k && !seen[k]){ seen[k]=1; out.push(x); }
   });
   return out.slice(0, cap || 4);
+};
+
+/* ---------- Category message bank ----------
+   Canonical key-message lines per category, drawn from the messaging
+   house. Merged (deduped) with each asset's own messages so every card
+   carries at least three on-brand lines. No invented claims. */
+window.AIWO_MSG_BANK = {
+  TL: ["From wellness activity to measured longevity outcomes.","Lengthen the joyspan. Compress the sufferspan. Prove it."],
+  EB: ["Board-ready: vision, proof and a low-risk ask.","Health your board can see."],
+  SE: ["Sell the outcome, prove the system, close on a pilot.","We don't sell tests. We sell outcomes."],
+  PP: ["Transparent and indicative; confirmed in proposal.","One all-inclusive programme. Tiers that scale."],
+  BR: ["Premium in the hand — quiet, confident, expensive in feel.","One promise per page; no bullet clutter."],
+  EM: ["Nurture with evidence, never noise.","Every touch earns the next one."],
+  AD: ["Vibrant but professional; hope, not fear.","One idea, one CTA per creative."],
+  CS: ["Evidence first: labelled, attributed, aggregate-only.","Trajectories, not guarantees."],
+  CL: ["Physician-led rigour behind every claim.","Never 'AI-diagnosed'."],
+  PV: ["Privacy is the architecture, not the fine print.","The employer–employee boundary is absolute."],
+  ON: ["Consent-first, warm, and effortless to join.","No consent, no draw."],
+  AP: ["A year of guided change in the member's pocket.","Every finding becomes a livable action."],
+  HR: ["Equip the People team to run it like pros.","Leaders go first; engagement follows."],
+  IN: ["The same engine, tuned to the sector's real risks.","One standard, delivered identically."],
+  OP: ["Framed on the outcome the buyer must defend.","Five outcomes leadership can stand behind."],
+  EV: ["Insight first; the pitch earns its place.","Convert the energy, not just the contact."],
+  PRM:["One category story, told with discipline.","Newsworthy, quotable, never over-claimed."],
+  CH: ["Partners extend reach without diluting the standard.","Brand-correct, claims-disciplined, always."],
+  DL: ["One standard, every wave, every city.","Competence felt as calm."],
+  BD: ["One brand, unmistakable on every surface.","The Longevity Spectrum, used with discipline."],
+  VD: ["Motion that explains, never decorates.","Captioned, accessible, reduced-motion aware."],
+  WB: ["The digital surface that converts senior buyers.","One primary CTA per page: Book a Pilot."],
+  DM: ["High-touch reach for hard-to-reach executives.","Premium, personal, measurable."],
+  TS: ["Credibility earned, never inflated.","Only with consent; labelled if illustrative."],
+  RK: ["The right assets for the seat at the table.","Curated to the decision-maker's question."],
+  GL: ["One vocabulary, one message house, one map.","Define it once; use it everywhere."]
+};
+window.AIWO_RESOLVE_MSGS = function(p, cap){
+  var bank = (window.AIWO_MSG_BANK[p.catKey] || []);
+  var seen = {}, out = [];
+  (p.messages || []).concat(bank).forEach(function(x){
+    var k = (x||'').toLowerCase().replace(/[^a-z0-9]/g,'');
+    if(k && !seen[k]){ seen[k]=1; out.push(x); }
+  });
+  return out.slice(0, cap || 4);
+};
+
+/* ---------- Category context ("Where it fits") ----------
+   One grounded paragraph per category: the funnel role and how these
+   assets connect to the operating system (BioMAP → SIIS → LongeVis →
+   JoySpan) and the claims discipline. Rendered on every card. */
+window.AIWO_CONTEXT = {
+  TL: "Thought leadership sits at the top of the funnel: it defines Measured Workforce Longevity as a category and earns the first conversation. Every piece ladders to the message house — the JoySpan promise and the four frameworks (BioMAP → SIIS → LongeVis → JoySpan) — and hands off to the Executive Brief and the pilot conversation.",
+  EB: "Executive & board assets serve the decision moment: they compress the category, the system and the proof into the register of a boardroom, and always land on the same low-risk ask — a managed 50–100-person pilot, scaled on a proven pass.",
+  SE: "Sales enablement arms the revenue team mid-funnel: every asset reinforces the same narrative arc (the value leak → the shift → the four frameworks → proof → the pilot) and obeys the claims discipline, so any rep tells one consistent, honest story.",
+  PP: "Pricing & proposal assets serve finance and procurement at the decision stage: transparent, indicative commercials built on the all-inclusive ₹30,000 flagship, volume terms for cohorts, and directional value framing — never guaranteed returns, never internal cost or margin.",
+  BR: "Print pieces carry the brand into rooms and hands: premium, quiet layouts that mirror the site narrative — promise, frameworks, journey, value, proof — and always close on the pilot ask with indicative figures only.",
+  EM: "Email & nurture assets keep the long enterprise cycle warm: persona-tuned journeys that pair one idea with one asset and one CTA per touch, routing people leaders, finance and sponsors toward the Executive Brief and the pilot.",
+  AD: "Advertising & social builds category awareness at the top of the funnel: organ ages and the JoySpan trajectory as scroll-stopping hooks, always vibrant-but-professional, always attributed, driving to the report, the estimator or the pilot page.",
+  CS: "Case studies & proof assets convert consideration into confidence: context → cohort → measured → trajectory → results, clearly labelled illustrative until live references mature, aggregate-only, and framed as trajectories rather than guarantees.",
+  CL: "Clinical & scientific assets underwrite every other category: the panels, organ-age methodology, governance charter and claims discipline that let a CMO or medical advisor say yes — physician-reviewed, attributed, never over-claimed.",
+  PV: "Privacy, security & trust assets de-risk the deal: consent-first, single-channel, aggregate-only architecture under DPDPA, with the ISO 27001 / SOC-2 roadmap stated honestly — turning the buyer's biggest concern into an adoption driver.",
+  ON: "Onboarding & comms assets carry the member's first mile: leadership-backed invitations, plain-language consent and camp-day guidance that maximise turnout while keeping participation voluntary, informed and private.",
+  AP: "Member experience assets sustain the year of change: the LifeOS app, the physician-signed Smart Report, the 11+1 pillar actions and the quarterly re-test cadence that make the SIIS cycle a daily reality for every member.",
+  HR: "Manager & HR enablement assets make the client organisation the delivery partner: rollout playbooks, champions, comms calendars and engagement mechanics — with leadership participation, the #1 driver, designed in from day one.",
+  IN: "Industry playbooks tune one engine to each vertical's real risks and buying culture: the same measurement, delivery and privacy canon, with sector-specific proof points and rollout patterns for the sales conversation.",
+  OP: "Outcome playbooks frame the programme on what the buyer must defend — productivity, continuity, retention, GLP-1 duty of care, ESG — each mapping the problem to the system and to the metric leadership can stand behind.",
+  EV: "Events & webinar assets create high-trust moments mid-funnel: insight-led formats where the category story is taught rather than pitched, with consent-based capture routed into the right nurture track and a natural path to a pilot.",
+  PRM:"PR & media assets build third-party authority for the category: one disciplined story — measured workforce longevity — with approved facts, prepared spokespeople and claims that never outrun the evidence.",
+  CH: "Partner & channel assets extend reach through labs, brokers and resellers while protecting the standard: enablement, co-branding rules and QC obligations that keep every partner brand-correct and claims-disciplined.",
+  DL: "Delivery & operations assets are the engine room: the Wave Model (~1,250/week at ~280 draws/day), barcode double-scan QC, validated cold-chain, 100% certified operators and reconciliation to closure — one standard, every city.",
+  BD: "Brand & identity assets keep every surface unmistakably AIWO Tribe: the Longevity Spectrum palette, the Sora/Inter system, the wordmark, tone of voice and templates that make on-brand production fast and drift impossible.",
+  VD: "Video & motion assets explain the sophisticated simply: the SIIS loop, the JoySpan trajectory and the member year in motion — purposeful, captioned, reduced-motion aware, and always on illustrative data.",
+  WB: "Web & landing assets are the conversion surface: the flagship narrative, the estimator, the trust centre and the pilot form — one primary CTA per page, accessible, fast, and honest in every claim.",
+  DM: "Direct mail & OOH reach executives the inbox can't: premium physical moments and dwell-time placements that carry one bold idea and a measurable path (QR) to the report, the estimator or a pilot conversation.",
+  TS: "Trust & social-proof assets supply the credibility layer: consented testimonials, honest certification status, attributed coverage and shareable proof visuals — credibility earned, never inflated.",
+  RK: "Role kits curate the library for each seat at the table — CEO/board, HR, finance, clinical — bundling exactly the assets that answer that decision-maker's question, and nothing that doesn't.",
+  GL: "Reference & index assets keep 160 pieces coherent: the glossary, the message house and this library itself — one vocabulary and one map so every team ships on-message, first time."
+};
+
+/* ---------- Category usage discipline ----------
+   A canonical guidance sentence per category, appended to each card's
+   own usage note so no brief ships with thin guidance. */
+window.AIWO_USAGE_BANK = {
+  TL: "Attribute every benchmark, label illustrative figures, and frame outcomes as measured trajectories — never guarantees.",
+  EB: "Keep the boardroom register: no internal cost or margin, no guarantees, and always close on the managed-pilot ask.",
+  SE: "Follow the claims-discipline guide; never expose internal cost or margin, and route hard clinical or privacy questions to the right SME asset.",
+  PP: "All figures indicative and confirmed in proposal; value framing stays directional — no guaranteed-return language, ever.",
+  BR: "Print premium or not at all; keep pricing indicative and the claims discipline intact on every page.",
+  EM: "Honour consent and frequency caps, suppress on active opportunities, and keep every claim trajectory-framed.",
+  AD: "One warm CTA per creative, claims attributed, tone hopeful — and clinical review wherever health topics appear.",
+  CS: "Label illustrative until live references mature; aggregate-only, anonymised, and never implying guaranteed outcomes.",
+  CL: "Clinical/compliance review is a hard gate before release; every external claim attributed; limitations stated honestly.",
+  PV: "Keep certification status honest (roadmap vs certified); reinforce the single-channel, aggregate-only boundary everywhere.",
+  ON: "Encourage, never pressure: participation is voluntary, consent is a hard stop, and privacy is reinforced at every touch.",
+  AP: "Member-first and non-clinical in tone; no medical advice beyond the physician-signed plan; route concerns to clinicians.",
+  HR: "Keep the privacy boundary explicit — HR sees aggregates only — and set realistic logistics expectations per rollout.",
+  IN: "Tailor proof to the account but keep figures directional and attributed; the canon never changes, only the framing.",
+  OP: "Frame value directionally against the outcome; pair with the estimator and ROI model — never promise returns.",
+  EV: "Lead with insight, capture with consent, and follow up within 48 hours into the right nurture track.",
+  PRM:"Prep every spokesperson with the media FAQ; no exact-count boasts, no guarantees, benchmarks always attributed.",
+  CH: "Partners must follow the claims discipline and co-branding rules; internal commercials are never shared externally.",
+  DL: "Internal/partner use; QC and certification gates are non-negotiable, and every exception is documented to closure.",
+  BD: "Use approved assets and tokens only; never recreate the mark; review partner and agency work before publication.",
+  VD: "Captions mandatory, reduced-motion variants provided, and only illustrative data ever appears on screen.",
+  WB: "Hold the performance and accessibility budgets; one primary CTA per page; every claim attributed and current.",
+  DM: "Comply with gifting policies, keep it tasteful and useful, and make response measurable via QR to a tracked page.",
+  TS: "Display only with written consent; honour revocation; label illustrative content and keep certification status honest.",
+  RK: "Curate to the agenda — include only what answers that decision-maker's question; refresh as assets are updated.",
+  GL: "Treat as the single source of truth: update statuses as assets ship and route every new piece into the right category."
+};
+window.AIWO_RESOLVE_USAGE = function(p){
+  var add = window.AIWO_USAGE_BANK[p.catKey] || "";
+  var base = (p.usage || "").trim();
+  if (!add) return base;
+  var norm = function(s){ return s.toLowerCase().replace(/[^a-z0-9]/g,''); };
+  if (norm(base).indexOf(norm(add).slice(0, 40)) > -1) return base;
+  return base + (base.endsWith(".") ? " " : ". ") + add;
 };
