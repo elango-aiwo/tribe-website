@@ -228,8 +228,10 @@ h3 { font-size: clamp(20px, 2.4vw, 26px); }
   color: var(--graphite); transition: color .2s, background .2s;
 }
 .nav-link svg { width: 14px; height: 14px; transition: transform .3s var(--ease); opacity: .6; }
-.nav-item:hover .nav-link { color: var(--primary-solid); background: var(--mist); }
-.nav-item:hover .nav-link svg { transform: rotate(180deg); }
+.nav-item:hover .nav-link,
+.nav-item--mega.open > .nav-link { color: var(--primary-solid); background: var(--mist); }
+.nav-item:hover .nav-link svg,
+.nav-item--mega.open > .nav-link svg { transform: rotate(180deg); }
 
 .nav-cta { display: flex; align-items: center; gap: 12px; }
 
@@ -244,8 +246,11 @@ h3 { font-size: clamp(20px, 2.4vw, 26px); }
   z-index: 120;
 }
 .nav-item--mega { position: static; }
-.nav-item--mega:hover .mega { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
-.mega::before { content:""; position:absolute; top:-14px; left:0; right:0; height:14px; }
+.nav-item--mega:hover .mega,
+.nav-item--mega.open .mega { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+/* Invisible hover bridge — spans full width so the cursor never crosses dead
+   space when moving from an (edge) menu item to the centered mega panel. */
+.mega::before { content:""; position:absolute; top:-14px; left:-100vw; right:-100vw; height:16px; }
 .mega-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
 .mega-col h5 { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--slate); margin-bottom: 12px; font-weight: 600; }
 .mega-link { display: block; padding: 9px 12px; border-radius: 10px; font-weight: 500; font-size: 14.5px; color: var(--graphite); transition: background .18s, color .18s, padding .18s; }

@@ -8,6 +8,113 @@
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
 
+  /* =============================================================
+     CANONICAL HEADER — single source of truth.
+     Injected on every page so the menu system is identical
+     everywhere: main items navigate to full pages; mega sub-links
+     reach specific sections. No page can drift out of sync.
+     ============================================================= */
+  const CHEV = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>';
+  const ARW  = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+  const PLUS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>';
+
+  const NAV_LINKS_HTML =
+    '<div class="nav-item nav-item--mega">' +
+      '<a class="nav-link" href="programme.html">The Programme ' + CHEV + '</a>' +
+      '<div class="mega"><div class="mega-grid">' +
+        '<div class="mega-col"><h5>Understand the system</h5>' +
+          '<a class="mega-link" href="programme.html">Overview — Tribe<span>One programme, four frameworks</span></a>' +
+          '<a class="mega-link" href="programme.html#how">How It Works — the SIIS Cycle<span>The 90-day method</span></a>' +
+          '<a class="mega-link" href="programme.html#measure">What We Measure — BioMAP<span>200+ biomarkers, 7 panels</span></a></div>' +
+        '<div class="mega-col"><h5>Experience the outcome</h5>' +
+          '<a class="mega-link" href="programme.html#pillars">The 11+1 Pillars<span>The LongeVis Matrix</span></a>' +
+          '<a class="mega-link" href="programme.html#app">The LifeOS App<span>For every employee</span></a>' +
+          '<a class="mega-link" href="proof.html#north">The JoySpan Outcome<span>The hero metric</span></a></div>' +
+      '</div><div class="mega-feature"><p>See the 12-month journey, baseline to proof.</p>' +
+        '<a class="link-arrow" href="programme.html#journey">Explore ' + ARW + '</a></div></div></div>' +
+
+    '<div class="nav-item nav-item--mega">' +
+      '<a class="nav-link" href="solutions.html">Solutions ' + CHEV + '</a>' +
+      '<div class="mega"><div class="mega-grid">' +
+        '<div class="mega-col"><h5>By outcome</h5>' +
+          '<a class="mega-link" href="solutions.html#outcomes">Productivity Protection</a>' +
+          '<a class="mega-link" href="solutions.html#outcomes">Critical-Role De-risking</a>' +
+          '<a class="mega-link" href="solutions.html#outcomes">Retention &amp; Culture</a>' +
+          '<a class="mega-link" href="solutions.html#outcomes">GLP-1 Duty of Care</a>' +
+          '<a class="mega-link" href="solutions.html#outcomes">ESG &amp; Wellbeing Reporting</a></div>' +
+        '<div class="mega-col"><h5>By industry</h5>' +
+          '<a class="mega-link" href="solutions.html#industries">Technology &amp; GCCs</a>' +
+          '<a class="mega-link" href="solutions.html#industries">Financial Services</a>' +
+          '<a class="mega-link" href="solutions.html#industries">Manufacturing &amp; Energy</a>' +
+          '<a class="mega-link" href="solutions.html#industries">Healthcare &amp; Pharma</a>' +
+          '<a class="mega-link" href="solutions.html#industries">Professional Services</a></div>' +
+      '</div><div class="mega-feature"><p>Which outcome matters most to your board?</p>' +
+        '<a class="link-arrow" href="solutions.html">Find your fit ' + ARW + '</a></div></div></div>' +
+
+    '<div class="nav-item nav-item--mega">' +
+      '<a class="nav-link" href="proof.html">Proof ' + CHEV + '</a>' +
+      '<div class="mega"><div class="mega-grid">' +
+        '<div class="mega-col"><h5>The evidence</h5>' +
+          '<a class="mega-link" href="proof.html#north">Outcomes &amp; KPIs<span>The north-star trajectory</span></a>' +
+          '<a class="mega-link" href="index.html#dashboard">The Employer Dashboard<span>Privacy-safe, aggregate-only</span></a>' +
+          '<a class="mega-link" href="case-study.html">Results &amp; Case Studies</a></div>' +
+        '<div class="mega-col"><h5>The science</h5>' +
+          '<a class="mega-link" href="proof.html#science">Science &amp; Evidence<span>The clinical model</span></a>' +
+          '<a class="mega-link" href="index.html#snapshot">Benchmarks &amp; ROI<span>Workforce snapshot estimator</span></a>' +
+          '<a class="mega-link" href="deliver.html#clinical">Clinical Governance</a></div>' +
+      '</div><div class="mega-feature"><p>The north-star: a proven year-over-year trajectory.</p>' +
+        '<a class="link-arrow" href="proof.html">See the proof ' + ARW + '</a></div></div></div>' +
+
+    '<div class="nav-item nav-item--mega">' +
+      '<a class="nav-link" href="deliver.html">How We Deliver ' + CHEV + '</a>' +
+      '<div class="mega"><div class="mega-grid">' +
+        '<div class="mega-col"><h5>At scale</h5>' +
+          '<a class="mega-link" href="deliver.html#scale">Delivery at Scale<span>The Wave Model</span></a>' +
+          '<a class="mega-link" href="deliver.html#privacy">Data, Privacy &amp; Consent</a>' +
+          '<a class="mega-link" href="deliver.html#clinical">Clinical Governance &amp; Safety</a></div>' +
+        '<div class="mega-col"><h5>Trust</h5>' +
+          '<a class="mega-link" href="deliver.html#security">Security &amp; Compliance<span>DPDPA · ISO · SOC-2 roadmap</span></a>' +
+          '<a class="mega-link" href="deliver.html#people">People &amp; Certification</a></div>' +
+      '</div><div class="mega-feature"><p>Run for 5,000 people — identically.</p>' +
+        '<a class="link-arrow" href="deliver.html">How we scale ' + ARW + '</a></div></div></div>' +
+
+    '<div class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></div>' +
+    '<div class="nav-item"><a class="nav-link" href="resources.html">Resources</a></div>';
+
+  const NAV_CTA_HTML =
+    '<a href="book.html" class="btn btn--ghost btn--sm">Executive Brief</a>' +
+    '<a href="book.html" class="btn btn--primary btn--sm magnetic">Book a Pilot</a>' +
+    '<button class="nav-burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>';
+
+  const M_ACC_HTML =
+    '<div class="m-acc"><button class="m-acc-head">The Programme ' + PLUS + '</button><div class="m-acc-body">' +
+      '<a href="programme.html">Overview</a><a href="programme.html#how">How It Works — SIIS</a><a href="programme.html#measure">What We Measure — BioMAP</a><a href="programme.html#pillars">The 11+1 Pillars</a><a href="programme.html#app">The LifeOS App</a></div></div>' +
+    '<div class="m-acc"><button class="m-acc-head">Solutions ' + PLUS + '</button><div class="m-acc-body">' +
+      '<a href="solutions.html#outcomes">By outcome</a><a href="solutions.html#industries">By industry</a><a href="solutions.html#roles">By role</a></div></div>' +
+    '<div class="m-acc"><button class="m-acc-head">Proof ' + PLUS + '</button><div class="m-acc-body">' +
+      '<a href="proof.html#north">Outcomes &amp; KPIs</a><a href="index.html#dashboard">Employer Dashboard</a><a href="proof.html#science">Science &amp; Evidence</a><a href="case-study.html">Case Studies</a></div></div>' +
+    '<div class="m-acc"><button class="m-acc-head">How We Deliver ' + PLUS + '</button><div class="m-acc-body">' +
+      '<a href="deliver.html#scale">Delivery at Scale</a><a href="deliver.html#privacy">Privacy &amp; Consent</a><a href="deliver.html#security">Security &amp; Compliance</a></div></div>' +
+    '<div class="m-acc"><button class="m-acc-head" onclick="location.href=\'pricing.html\'">Pricing &amp; Plans</button></div>' +
+    '<div class="m-acc"><button class="m-acc-head" onclick="location.href=\'resources.html\'">Resources</button></div>' +
+    '<div class="m-acc"><button class="m-acc-head" onclick="location.href=\'book.html\'">Book a Pilot</button></div>';
+
+  (function injectHeader() {
+    const links = $(".nav .nav-links");
+    if (links) links.innerHTML = NAV_LINKS_HTML;
+    const cta = $(".nav .nav-cta");
+    if (cta) cta.innerHTML = NAV_CTA_HTML;
+    const brand = $(".nav .brand");
+    if (brand) brand.setAttribute("href", "index.html");
+    const overlay = $("#mOverlay");
+    if (overlay) {
+      const oBrand = overlay.querySelector(".brand");
+      if (oBrand) oBrand.setAttribute("href", "index.html");
+      $$(".m-acc", overlay).forEach(x => x.remove());
+      overlay.insertAdjacentHTML("beforeend", M_ACC_HTML);
+    }
+  })();
+
   /* ---------- Scroll progress + nav shadow ---------- */
   const scrollBar = $("#scrollBar");
   const nav = $("#nav");
@@ -31,6 +138,31 @@
     if (acc.querySelector(".m-acc-body")) acc.classList.toggle("open");
   }));
   $$("#mOverlay a").forEach(a => a.addEventListener("click", closeM));
+
+  /* ---------- Mega-menu hover intent (desktop) ----------
+     Opens on enter; closes after a short delay so the cursor can travel
+     from an (edge) menu item to the centered panel without it vanishing.
+     Only one panel is open at a time. */
+  const megaItems = $$(".nav-item--mega");
+  const CLOSE_DELAY = 260;
+  megaItems.forEach(item => {
+    const openMega = () => {
+      megaItems.forEach(o => { if (o !== item) { clearTimeout(o._closeT); o.classList.remove("open"); } });
+      clearTimeout(item._closeT);
+      item.classList.add("open");
+    };
+    const scheduleClose = () => {
+      clearTimeout(item._closeT);
+      item._closeT = setTimeout(() => item.classList.remove("open"), CLOSE_DELAY);
+    };
+    item.addEventListener("mouseenter", openMega);
+    item.addEventListener("mouseleave", scheduleClose);
+    // clicking a link inside the panel closes it immediately
+    $$(".mega a", item).forEach(a => a.addEventListener("click", () => { clearTimeout(item._closeT); item.classList.remove("open"); }));
+  });
+  // close any open panel when leaving the header entirely
+  const navEl = $("#nav");
+  if (navEl) navEl.addEventListener("mouseleave", () => megaItems.forEach(o => { o._closeT = setTimeout(() => o.classList.remove("open"), CLOSE_DELAY); }));
 
   /* ---------- Scroll reveal ---------- */
   const revealIO = new IntersectionObserver((entries) => {

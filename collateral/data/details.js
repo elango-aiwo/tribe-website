@@ -526,7 +526,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"Templates",Length:"3 sequences",Owner:"Sales + Content",Stage:"Top funnel",Cadence:"Refresh quarterly"},
  usage:"Personalise the first line; never over-claim. Route replies to the right nurture track.", related:["EM-01","EM-02","SE-05"], cta:{label:"Request the Executive Brief",href:"../book.html"} },
 
-"SE-09": { title:"Demo Script — The 12-Month Journey", cat:"Sales Enablement", catKey:"SE", icon:"deck", status:"DRAFT",
+"SE-09": { title:"Demo Script — The 12-Month Journey", cat:"Sales Enablement", catKey:"SE", icon:"deck", status:"LIVE",
  tagline:"A repeatable walkthrough of baseline → act → re-measure → prove.", stage:"Consideration → Decision",
  format:"Script + screen flow", audience:["Sales reps","Solutions"], channels:["Live demo","Recorded demo"],
  overview:"A scripted product-and-journey demo that walks a buyer through a member's year — from the 20-minute draw and Smart Report to quarterly re-measures and a year-on JoySpan trajectory — plus the privacy-safe employer view.",
@@ -584,7 +584,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"Table",Length:"1 page",Owner:"Commercial",Stage:"Decision",Cadence:"Per price review"},
  usage:"Mirror the live pricing page matrix; keep figures indicative.", related:["PP-01","PP-02"], cta:{label:"Compare on the pricing page",href:"../pricing.html#compare"} },
 
-"PP-06": { title:"Volume Terms Guide", cat:"Pricing & Proposals", catKey:"PP", icon:"tag", status:"DRAFT",
+"PP-06": { title:"Volume Terms Guide", cat:"Pricing & Proposals", catKey:"PP", icon:"tag", status:"LIVE",
  tagline:"How cohort pricing and wave commercials are structured.", stage:"Decision",
  format:"Internal guide · 3 pages", audience:["Sales","Commercial","Finance"], channels:["Internal enablement"],
  overview:"An internal reference on how volume terms work for workforce cohorts — banding, wave scheduling and the commercial logic — so reps can scope confidently before a formal proposal.",
@@ -691,7 +691,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"Series",Length:"3 emails",Owner:"Sales + Growth",Stage:"Decision",Cadence:"Triggered"},
  usage:"Trigger from CRM demo stage; stop on reply. Keep claims accurate.", related:["EM-04","SE-09","CS-04"], cta:{label:"Book a Pilot",href:"../book.html"} },
 
-"EM-06": { title:"Re-engagement / Win-back Series", cat:"Email & Nurture", catKey:"EM", icon:"mail", status:"DRAFT",
+"EM-06": { title:"Re-engagement / Win-back Series", cat:"Email & Nurture", catKey:"EM", icon:"mail", status:"LIVE",
  tagline:"Reviving stalled opportunities with new proof.", stage:"Re-engagement",
  format:"Email series · 3–4 touches", audience:["Stalled opportunities","Lapsed leads"], channels:["Marketing automation"],
  overview:"A win-back series that re-opens stalled conversations with a fresh hook — a new report, a case study, or a timely angle (e.g. GLP-1) — and a low-friction return path.",
@@ -758,7 +758,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"Display/social",Length:"Set",Owner:"Growth + Clinical",Stage:"Top–mid",Cadence:"Per campaign"},
  usage:"Clinical review required; no medical advice or product endorsement; lead with care.", related:["OP-04","TL-06","CL-06"], cta:{label:"Explore GLP-1 duty of care",href:"../solutions.html#outcomes"} },
 
-"AD-06": { title:"Video Ad — 30s Brand Film", cat:"Advertising & Social", catKey:"AD", icon:"mega", status:"DRAFT",
+"AD-06": { title:"Video Ad — 30s Brand Film", cat:"Advertising & Social", catKey:"AD", icon:"mega", status:"LIVE",
  tagline:"Storyboard and script for the hero brand spot.", stage:"Awareness",
  format:"30s video · script + storyboard", audience:["Executives","People leaders"], channels:["LinkedIn","YouTube","Events"],
  overview:"The hero brand film concept — from a one-time test to a measured trajectory — told in 30 seconds with the gradient motion system, ending on the promise line and a single CTA.",
@@ -807,7 +807,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"Page + PDF",Length:"~1,000 words",Owner:"Content + Clinical",Stage:"Mid–bottom",Cadence:"Replace with live as available"},
  usage:"Label illustrative until a live reference exists; outcomes as trajectories, aggregate-only.", related:["CS-03","CS-04","IN-01"], cta:{label:"Read the case study",href:"../case-study.html"} },
 
-"CS-02": { title:"Case Study — Financial Services", cat:"Case Studies & Proof", catKey:"CS", icon:"chart", status:"DRAFT",
+"CS-02": { title:"Case Study — Financial Services", cat:"Case Studies & Proof", catKey:"CS", icon:"chart", status:"LIVE",
  tagline:"Critical-role de-risking across a leadership cohort (illustrative).", stage:"Consideration → Decision",
  format:"Web page + PDF", audience:["CEO / Board","Risk","CHRO"], channels:["Website","Sales","Proposal"],
  overview:"An illustrative case study focused on critical-role de-risking in financial services — surfacing reversible risk in a leadership cohort and tracking organ ages year over year, framed for a governance-minded buyer.",
@@ -843,7 +843,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"Demo + PDF",Length:"Guided",Owner:"Product + Content",Stage:"Mid–bottom",Cadence:"With product"},
  usage:"Use illustrative data; never display real cohorts. Reinforce the privacy boundary.", related:["CS-04","PV-04","WB-06"], cta:{label:"See the dashboard",href:"../index.html#dashboard"} },
 
-"CS-06": { title:"Testimonial Reel — Script & Kit", cat:"Case Studies & Proof", catKey:"CS", icon:"chart", status:"PLANNED",
+"CS-06": { title:"Testimonial Reel — Script & Kit", cat:"Case Studies & Proof", catKey:"CS", icon:"chart", status:"LIVE",
  tagline:"The framework for capturing leader and member testimonials.", stage:"Internal → proof",
  format:"Capture kit + script", audience:["CS team","Brand","Members (consented)"], channels:["Video","Website","Social"],
  overview:"A consent-first framework for capturing authentic testimonials from leaders and members — question sets, release forms and edit guidance — so social proof is genuine, compliant and on-message.",
@@ -1044,7 +1044,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"Print set",Length:"Set",Owner:"Brand + Ops",Stage:"Onboarding",Cadence:"Per venue"},
  usage:"Maintain premium, calm tone; reinforce consent and privacy on site.", related:["ON-05","DL-02","BD-05"], cta:{label:"See delivery at scale",href:"../deliver.html#scale"} },
 
-"ON-08": { title:"Manager Talking Points", cat:"Employee Onboarding & Comms", catKey:"ON", icon:"users", status:"DRAFT",
+"ON-08": { title:"Manager Talking Points", cat:"Employee Onboarding & Comms", catKey:"ON", icon:"users", status:"LIVE",
  tagline:"A short script so managers can answer team questions.", stage:"Onboarding",
  format:"1 page · talking points", audience:["Line managers","Team leads"], channels:["Manager briefing","Intranet"],
  overview:"A concise set of talking points that equips line managers to answer the questions their teams will ask — what it is, why the company offers it, and the privacy promise — without overstepping into clinical or HR advice.",
@@ -1169,7 +1169,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"FAQ",Length:"~4 pages",Owner:"Member Care + HR Enablement",Stage:"Onboarding",Cadence:"Living"},
  usage:"Reinforce the privacy boundary; set realistic logistics expectations.", related:["HR-01","CS-05","PV-03"], cta:{label:"See the dashboard",href:"../index.html#dashboard"} },
 
-"HR-07": { title:"Manager Briefing Deck", cat:"Manager & HR Enablement", catKey:"HR", icon:"users", status:"DRAFT",
+"HR-07": { title:"Manager Briefing Deck", cat:"Manager & HR Enablement", catKey:"HR", icon:"users", status:"LIVE",
  tagline:"A short deck to align line managers before launch.", stage:"Onboarding",
  format:"Slide deck · ~8 slides", audience:["Line managers","Team leads"], channels:["Manager briefing","Intranet"],
  overview:"A brief deck to align managers ahead of launch — what the programme is, the privacy promise, how to encourage (not mandate) participation, and where to send questions — so the rollout has consistent local support.",
@@ -1227,7 +1227,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"Playbook",Length:"~12 pages",Owner:"Sales + Content",Stage:"Mid funnel",Cadence:"Annual"},
  usage:"Lead with people-as-product; keep figures directional.", related:["IN-01","OP-03","OP-01"], cta:{label:"Explore by industry",href:"../solutions.html#industries"} },
 
-"IN-06": { title:"Public Sector Playbook", cat:"Industry Playbooks", catKey:"IN", icon:"book", status:"DRAFT",
+"IN-06": { title:"Public Sector Playbook", cat:"Industry Playbooks", catKey:"IN", icon:"book", status:"LIVE",
  tagline:"Transparent, aggregate, year-over-year accountability.", stage:"Consideration",
  format:"Playbook · ~12 pages", audience:["Public-sector HR","Programme leads","Audit"], channels:["Sales","Website"],
  overview:"A vertical playbook for the public sector — large, diverse workforces with strong accountability and transparency expectations and budget scrutiny — emphasising transparent aggregate reporting and identical delivery at scale.",
@@ -1334,7 +1334,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"Pack",Length:"Set",Owner:"Events + Growth",Stage:"Mid funnel",Cadence:"Per event"},
  usage:"Honour consent; segment by interest; prompt the next step.", related:["EM-07","EM-05","EV-01"], cta:{label:"Request the report",href:"../book.html"} },
 
-"EV-06": { title:"CXO Dinner / Salon Kit", cat:"Events & Webinars", catKey:"EV", icon:"mic", status:"DRAFT",
+"EV-06": { title:"CXO Dinner / Salon Kit", cat:"Events & Webinars", catKey:"EV", icon:"mic", status:"LIVE",
  tagline:"An intimate, high-trust acquisition format.", stage:"Consideration → Decision",
  format:"Kit · invites + run-of-show + gifts", audience:["CEO / Board","CHRO","CMO"], channels:["Private dinners","Salons"],
  overview:"A premium kit for hosting curated CXO dinners — invitations, seating and conversation design, a tasteful brand moment and follow-up — the high-touch format for relationship-led enterprise acquisition.",
@@ -1383,7 +1383,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"FAQ",Length:"~4 pages",Owner:"PR + Clinical",Stage:"Top funnel",Cadence:"Living"},
  usage:"Mandatory prep for interviews; never overstate; attribute benchmarks.", related:["PRM-05","CL-07","PRM-02"], cta:{label:"Contact us",href:"../company.html#contact"} },
 
-"PRM-05": { title:"Spokesperson Briefing", cat:"PR & Media", catKey:"PRM", icon:"mega", status:"DRAFT",
+"PRM-05": { title:"Spokesperson Briefing", cat:"PR & Media", catKey:"PRM", icon:"mega", status:"LIVE",
  tagline:"Prep for interviews and panels.", stage:"Awareness",
  format:"Briefing doc", audience:["Spokespeople","Founders"], channels:["PR","Internal"],
  overview:"A pre-interview briefing template — audience, format, likely questions, key messages and bridging techniques — so every spokesperson appearance is confident, consistent and compliant.",
@@ -1392,7 +1392,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"Briefing",Length:"Per appearance",Owner:"PR",Stage:"Top funnel",Cadence:"Per appearance"},
  usage:"Prep before every appearance; reinforce claims discipline.", related:["PRM-04","PRM-03","CL-07"], cta:{label:"Contact us",href:"../company.html#contact"} },
 
-"PRM-06": { title:"Award Submission Templates", cat:"PR & Media", catKey:"PRM", icon:"mega", status:"PLANNED",
+"PRM-06": { title:"Award Submission Templates", cat:"PR & Media", catKey:"PRM", icon:"mega", status:"LIVE",
  tagline:"Reusable entries for wellbeing and innovation awards.", stage:"Awareness",
  format:"Templates", audience:["PR","Marketing"], channels:["Awards programmes"],
  overview:"Reusable award-entry templates — the story, the evidence and the differentiators — so AIWO can efficiently enter relevant wellbeing, HR and innovation awards to build third-party credibility.",
@@ -1441,7 +1441,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"1 page",Length:"1 page",Owner:"Partnerships",Stage:"Partner",Cadence:"Stable"},
  usage:"Keep terms transparent; honour privacy in referrals.", related:["CH-02","TS-02","EM-04"], cta:{label:"Contact us",href:"../company.html#contact"} },
 
-"CH-05": { title:"Partner Pitch Deck", cat:"Partner & Channel", catKey:"CH", icon:"hand", status:"DRAFT",
+"CH-05": { title:"Partner Pitch Deck", cat:"Partner & Channel", catKey:"CH", icon:"hand", status:"LIVE",
  tagline:"The deck partners use to sell the programme.", stage:"Partner",
  format:"Slide deck · ~16 slides", audience:["Partner sellers","Brokers"], channels:["Partner enablement"],
  overview:"A co-sell-ready deck partners use with their own clients — a streamlined version of the master sales narrative, brand-correct and claims-disciplined, that partners can present confidently.",
@@ -1450,7 +1450,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"Deck",Length:"~16 slides",Owner:"Partnerships + Sales",Stage:"Partner",Cadence:"Quarterly"},
  usage:"No internal margin; enforce claims discipline; keep brand-correct.", related:["CH-02","SE-01","CH-03"], cta:{label:"See the programme",href:"../programme.html"} },
 
-"CH-06": { title:"Channel Margin & Terms Sheet", cat:"Partner & Channel", catKey:"CH", icon:"hand", status:"PLANNED",
+"CH-06": { title:"Channel Margin & Terms Sheet", cat:"Partner & Channel", catKey:"CH", icon:"hand", status:"LIVE",
  tagline:"Internal-controlled commercial structure.", stage:"Partner (internal)",
  format:"Internal sheet", audience:["Partnerships","Finance","Legal"], channels:["Internal"],
  overview:"The internal-controlled reference for channel commercials — margin structure, tiers and terms for partners — used to negotiate and govern channel relationships. Never customer-facing.",
@@ -1517,7 +1517,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"Guide",Length:"Operational",Owner:"Operations",Stage:"Internal",Cadence:"With tooling"},
  usage:"Internal; investigate every exception; close the loop.", related:["DL-01","DL-04","AP-03"], cta:{label:"See delivery at scale",href:"../deliver.html#scale"} },
 
-"DL-07": { title:"Incident Response Runbook", cat:"Delivery & Operations", catKey:"DL", icon:"gear", status:"DRAFT",
+"DL-07": { title:"Incident Response Runbook", cat:"Delivery & Operations", catKey:"DL", icon:"gear", status:"LIVE",
  tagline:"The data-incident posture: red threshold > zero.", stage:"Internal",
  format:"Runbook · SOP", audience:["Security","Ops","Legal","CMO"], channels:["Internal","Trust reviews"],
  overview:"The runbook for responding to data or clinical incidents — detection, containment, notification and review — built around the principle that a data incident carries a red threshold of greater than zero.",
@@ -1588,7 +1588,7 @@ window.AIWO_DETAILS = {
    WAVE 21 — VIDEO & MOTION (VD)
    ============================================================ */
 
-"VD-01": { title:"Brand Film Script (90s)", cat:"Video & Motion", catKey:"VD", icon:"video", status:"DRAFT",
+"VD-01": { title:"Brand Film Script (90s)", cat:"Video & Motion", catKey:"VD", icon:"video", status:"LIVE",
  tagline:"The hero film: from a test to a trajectory.", stage:"Awareness",
  format:"Script + storyboard · 90s", audience:["Executives","People leaders"], channels:["Website","Events","LinkedIn","YouTube"],
  overview:"The 90-second hero film concept and script — the emotional arc from a forgettable one-time test to a measured, rising trajectory — built around the gradient motion system and closing on the promise line.",
@@ -1606,7 +1606,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"Brief + script",Length:"Short",Owner:"Motion + Clinical",Stage:"Mid funnel",Cadence:"With site"},
  usage:"Reduced-motion fallback; keep clinical accuracy.", related:["TL-04","VD-01","BD-05"], cta:{label:"See how it works",href:"../index.html#siis"} },
 
-"VD-03": { title:"Testimonial Film Kit", cat:"Video & Motion", catKey:"VD", icon:"video", status:"PLANNED",
+"VD-03": { title:"Testimonial Film Kit", cat:"Video & Motion", catKey:"VD", icon:"video", status:"LIVE",
  tagline:"Capture framework for leader and member stories.", stage:"Proof",
  format:"Production kit", audience:["Brand","CS","Members (consented)"], channels:["Website","Social","Sales"],
  overview:"A production kit for capturing authentic video testimonials — consent and release, question sets, lighting and edit guidance — so social proof is genuine, compliant and on-message.",
@@ -1615,7 +1615,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"Kit",Length:"Production",Owner:"Brand + CS + Legal",Stage:"Proof",Cadence:"As references mature"},
  usage:"Consent mandatory/revocable; no implied guarantees.", related:["CS-06","TS-02","PV-05"], cta:{label:"See trust & proof",href:"../proof.html"} },
 
-"VD-04": { title:"Product Walkthrough — LifeOS", cat:"Video & Motion", catKey:"VD", icon:"video", status:"DRAFT",
+"VD-04": { title:"Product Walkthrough — LifeOS", cat:"Video & Motion", catKey:"VD", icon:"video", status:"LIVE",
  tagline:"A screen-capture tour of the member app.", stage:"Consideration",
  format:"Screen-capture video + script", audience:["People leaders","Members","Prospects"], channels:["Website","Sales","Onboarding"],
  overview:"A short product walkthrough of the LifeOS app — JoySpan home, Smart Report, pillar actions, supplements and community — using illustrative data, so buyers and members see the experience before committing.",
@@ -1624,7 +1624,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"Video + script",Length:"Short",Owner:"Product + Motion",Stage:"Mid funnel",Cadence:"With product"},
  usage:"Illustrative data only; never show real individual data.", related:["AP-01","SE-09","VD-05"], cta:{label:"See the app",href:"../index.html#app"} },
 
-"VD-05": { title:"Social Cutdowns Pack", cat:"Video & Motion", catKey:"VD", icon:"video", status:"PLANNED",
+"VD-05": { title:"Social Cutdowns Pack", cat:"Video & Motion", catKey:"VD", icon:"video", status:"LIVE",
  tagline:"15s and 6s edits for paid and organic.", stage:"Awareness",
  format:"Edit pack · multiple ratios", audience:["Social audiences"], channels:["LinkedIn","YouTube","Programmatic"],
  overview:"Short cutdowns of the hero film and explainers — 15s and 6s, multiple aspect ratios, captioned — built for paid and organic social distribution.",
@@ -1664,7 +1664,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"Web page + form",Length:"Conversion",Owner:"Growth",Stage:"Decision",Cadence:"CRO-tested"},
  usage:"Minimise fields; instant confirmation; honour privacy.", related:["EB-05","EM-04","BR-04"], cta:{label:"Book a Pilot",href:"../book.html"} },
 
-"WB-04": { title:"Industry × Outcome Landing Matrix", cat:"Web & Landing Pages", catKey:"WB", icon:"globe", status:"PLANNED",
+"WB-04": { title:"Industry × Outcome Landing Matrix", cat:"Web & Landing Pages", catKey:"WB", icon:"globe", status:"LIVE",
  tagline:"Programmatic pages for vertical search intent.", stage:"Awareness",
  format:"Programmatic page set", audience:["Search audiences by vertical"], channels:["Organic search","Paid search"],
  overview:"A programmatic SEO set crossing industries with outcomes (e.g. 'longevity programme for financial services') — scalable landing pages that capture vertical search intent and route into the funnel.",
@@ -1695,7 +1695,7 @@ window.AIWO_DETAILS = {
    WAVE 23 — DIRECT MAIL & OOH (DM)
    ============================================================ */
 
-"DM-01": { title:"Executive Direct-Mail Pack", cat:"Direct Mail & OOH", catKey:"DM", icon:"print", status:"DRAFT",
+"DM-01": { title:"Executive Direct-Mail Pack", cat:"Direct Mail & OOH", catKey:"DM", icon:"print", status:"LIVE",
  tagline:"A premium mailer that earns a meeting.", stage:"Awareness → Consideration",
  format:"Physical mailer", audience:["CEO / Board","CHRO"], channels:["Direct mail","ABM"],
  overview:"A premium, tactile direct-mail pack for hard-to-reach executives — a considered object plus a single sharp message and a personal path to a conversation — engineered to cut through a crowded digital inbox.",
@@ -1704,7 +1704,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"Mailer",Length:"Pack",Owner:"Brand + ABM",Stage:"Top–mid",Cadence:"Per ABM wave"},
  usage:"Use for targeted ABM; measure response; keep premium.", related:["DM-02","EB-02","BR-03"], cta:{label:"Request the Executive Brief",href:"../book.html"} },
 
-"DM-02": { title:"CXO Pilot-Invite Box", cat:"Direct Mail & OOH", catKey:"DM", icon:"print", status:"PLANNED",
+"DM-02": { title:"CXO Pilot-Invite Box", cat:"Direct Mail & OOH", catKey:"DM", icon:"print", status:"LIVE",
  tagline:"A considered gift-box invitation to pilot.", stage:"Consideration → Decision",
  format:"Gift box", audience:["CEO / Board","CHRO","CMO"], channels:["Direct mail","Events"],
  overview:"A high-touch gift-box invitation for priority accounts — a tasteful, useful object paired with a personal invitation to a managed pilot or a CXO dinner — the physical complement to relationship-led acquisition.",
@@ -1713,7 +1713,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"Gift box",Length:"Pack",Owner:"Brand + Sales",Stage:"Mid–bottom",Cadence:"Per priority account"},
  usage:"Tasteful and useful, never gimmicky; comply with gifting policies.", related:["DM-01","EV-06","BR-04"], cta:{label:"Book a Pilot",href:"../book.html"} },
 
-"DM-03": { title:"Airport & Lounge OOH", cat:"Direct Mail & OOH", catKey:"DM", icon:"print", status:"PLANNED",
+"DM-03": { title:"Airport & Lounge OOH", cat:"Direct Mail & OOH", catKey:"DM", icon:"print", status:"LIVE",
  tagline:"Brand presence where executives travel.", stage:"Awareness",
  format:"OOH creative · multiple formats", audience:["Executives","Business travellers"], channels:["Airport / lounge OOH"],
  overview:"Out-of-home creative for airports and business lounges — where senior leaders spend dwell time — built on a single bold line and the gradient system, with a clean path to learn more.",
@@ -1722,7 +1722,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"OOH",Length:"Format set",Owner:"Brand + Growth",Stage:"Top funnel",Cadence:"Per campaign"},
  usage:"Keep to one message; ensure legibility at distance; measurable QR.", related:["DM-04","DM-05","AD-03"], cta:{label:"Try the estimator",href:"../index.html#snapshot"} },
 
-"DM-04": { title:"Office-Tower Lobby OOH", cat:"Direct Mail & OOH", catKey:"DM", icon:"print", status:"PLANNED",
+"DM-04": { title:"Office-Tower Lobby OOH", cat:"Direct Mail & OOH", catKey:"DM", icon:"print", status:"LIVE",
  tagline:"Placements in GCC and corporate campuses.", stage:"Awareness",
  format:"OOH creative · lobby formats", audience:["Corporate employees","Leaders"], channels:["Office-tower / campus OOH"],
  overview:"Lobby and campus OOH for technology parks and corporate towers — reaching both decision-makers and the workforce — reinforcing the category and driving to the report or estimator.",
@@ -1731,7 +1731,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"OOH",Length:"Lobby set",Owner:"Brand + Growth",Stage:"Top funnel",Cadence:"Per campaign"},
  usage:"One message; respect venue rules; measurable QR.", related:["DM-03","DM-05","AD-04"], cta:{label:"Request the report",href:"../book.html"} },
 
-"DM-05": { title:"Conference Print Ads", cat:"Direct Mail & OOH", catKey:"DM", icon:"print", status:"DRAFT",
+"DM-05": { title:"Conference Print Ads", cat:"Direct Mail & OOH", catKey:"DM", icon:"print", status:"LIVE",
  tagline:"Programme guide and signage placements.", stage:"Awareness",
  format:"Print ads · guide + signage", audience:["Conference attendees","HR/leadership audiences"], channels:["Event programmes","Signage"],
  overview:"Print ad creative for HR and leadership conference programmes and signage — aligned to the booth presence — so the brand shows up coherently across an event.",
@@ -1753,7 +1753,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"Template",Length:"Web + deck",Owner:"Brand + Sales",Stage:"Mid–bottom",Cadence:"Living"},
  usage:"Display only with written permission; anonymise otherwise.", related:["TS-02","TS-05","CS-01"], cta:{label:"See trust & proof",href:"../proof.html"} },
 
-"TS-02": { title:"Testimonial Library", cat:"Trust & Social Proof", catKey:"TS", icon:"star", status:"DRAFT",
+"TS-02": { title:"Testimonial Library", cat:"Trust & Social Proof", catKey:"TS", icon:"star", status:"LIVE",
  tagline:"Approved quotes by persona and outcome.", stage:"Consideration → Decision",
  format:"Library · maintained", audience:["Sales","Marketing","Web"], channels:["Website","Decks","Social"],
  overview:"A maintained library of approved, consented testimonials — tagged by persona and outcome — so any asset can pull the right voice of proof, honestly attributed.",
@@ -1771,7 +1771,7 @@ window.AIWO_DETAILS = {
  specs:{Format:"1 page",Length:"1 page",Owner:"Security + Legal",Stage:"Decision",Cadence:"Updated on status change"},
  usage:"Never imply certifications not yet held; label roadmap clearly.", related:["PV-02","PV-03","WB-06"], cta:{label:"Visit the Trust Centre",href:"../legal.html#security"} },
 
-"TS-04": { title:"Press & Analyst Mentions Sheet", cat:"Trust & Social Proof", catKey:"TS", icon:"star", status:"PLANNED",
+"TS-04": { title:"Press & Analyst Mentions Sheet", cat:"Trust & Social Proof", catKey:"TS", icon:"star", status:"LIVE",
  tagline:"Curated third-party validation.", stage:"Consideration",
  format:"1 page · maintained", audience:["Prospects","Buyers","Partners"], channels:["Website","Decks","Proposals"],
  overview:"A curated sheet of press coverage and analyst mentions — third-party validation that lends category credibility — maintained as coverage grows.",
