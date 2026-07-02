@@ -220,6 +220,15 @@ h3 { font-size: clamp(20px, 2.4vw, 26px); }
 .footer-brand .brand .bt-desc { display: block; font-style: normal; font-family: var(--font-body); font-weight: 400; font-size: 10.5px; letter-spacing: .02em; color: rgba(255,255,255,.55); margin-top: 7px; padding-top: 7px; border-top: 1px solid rgba(255,255,255,.16); max-width: 240px; }
 .m-overlay .brand .brand-txt small, .footer-brand .brand .brand-txt small { color: rgba(255,255,255,.62); }
 
+/* ---- AIWO Tribe wordmark (brand logo) ---- */
+.brand .logo-wordmark { display: inline-flex; align-items: baseline; gap: .5em; white-space: nowrap; color: inherit; line-height: 1; }
+.brand .lw-aiwo { font-family: var(--font-display); font-weight: 300; font-size: 23px; letter-spacing: .3em; }
+.brand .lw-tribe { font-family: var(--font-display); font-weight: 500; font-size: 23px; letter-spacing: .005em; }
+.footer-brand .brand .logo-wordmark, .m-overlay .brand .logo-wordmark { color: #fff; }
+@media (max-width: 1360px) and (min-width: 1081px){
+  .brand .lw-aiwo, .brand .lw-tribe { font-size: 20px; }
+}
+
 .nav-links { display: flex; align-items: center; gap: 4px; flex-wrap: nowrap; min-width: 0; }
 .nav-item { position: relative; }
 .nav-link {
