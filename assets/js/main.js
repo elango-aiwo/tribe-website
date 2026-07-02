@@ -145,24 +145,56 @@
      Only one panel is open at a time. */
   const megaItems = $$(".nav-item--mega");
   const CLOSE_DELAY = 260;
+  const setExpanded = (item, on) => {
+    const link = item.querySelector(":scope > .nav-link");
+    if (link) link.setAttribute("aria-expanded", on ? "true" : "false");
+    item.classList.toggle("open", on);
+  };
   megaItems.forEach(item => {
+    const link = item.querySelector(":scope > .nav-link");
+    if (link) { link.setAttribute("aria-haspopup", "true"); link.setAttribute("aria-expanded", "false"); }
     const openMega = () => {
-      megaItems.forEach(o => { if (o !== item) { clearTimeout(o._closeT); o.classList.remove("open"); } });
+      megaItems.forEach(o => { if (o !== item) { clearTimeout(o._closeT); setExpanded(o, false); } });
       clearTimeout(item._closeT);
-      item.classList.add("open");
+      setExpanded(item, true);
     };
     const scheduleClose = () => {
       clearTimeout(item._closeT);
-      item._closeT = setTimeout(() => item.classList.remove("open"), CLOSE_DELAY);
+      item._closeT = setTimeout(() => setExpanded(item, false), CLOSE_DELAY);
     };
     item.addEventListener("mouseenter", openMega);
     item.addEventListener("mouseleave", scheduleClose);
     // clicking a link inside the panel closes it immediately
-    $$(".mega a", item).forEach(a => a.addEventListener("click", () => { clearTimeout(item._closeT); item.classList.remove("open"); }));
+    $$(".mega a", item).forEach(a => a.addEventListener("click", () => { clearTimeout(item._closeT); setExpanded(item, false); }));
   });
   // close any open panel when leaving the header entirely
   const navEl = $("#nav");
-  if (navEl) navEl.addEventListener("mouseleave", () => megaItems.forEach(o => { o._closeT = setTimeout(() => o.classList.remove("open"), CLOSE_DELAY); }));
+  if (navEl) navEl.addEventListener("mouseleave", () => megaItems.forEach(o => { o._closeT = setTimeout(() => setExpanded(o, false), CLOSE_DELAY); }));
+  // Escape closes any open panel
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") megaItems.forEach(o => { clearTimeout(o._closeT); setExpanded(o, false); }); });
+
+  /* ---------- Current-page indicator ---------- */
+  (function markCurrent() {
+    const here = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    $$(".nav-links .nav-item > .nav-link").forEach(a => {
+      const href = (a.getAttribute("href") || "").split("#")[0].toLowerCase();
+      if (href && href === here) a.classList.add("current");
+    });
+  })();
+
+  /* ---------- Anchor-landing correction ----------
+     Cross-page hash links (e.g. deliver.html#security) can land misaligned
+     when late layout (web-font swap) shifts content after the browser's
+     initial jump. Re-scroll to the target once fonts/layout settle. */
+  (function fixAnchorLanding() {
+    if (!location.hash) return;
+    const t = document.getElementById(location.hash.slice(1));
+    if (!t) return;
+    const go = () => t.scrollIntoView({ behavior: "auto", block: "start" });
+    requestAnimationFrame(go);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => setTimeout(go, 60));
+    setTimeout(go, 400);
+  })();
 
   /* ---------- Scroll reveal ---------- */
   const revealIO = new IntersectionObserver((entries) => {

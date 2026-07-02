@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/css/styles.css?v=3" />
+<link rel="stylesheet" href="assets/css/styles.css?v=4" />
 </head>
 <body>
 <div class="scroll-bar" id="scrollBar"></div>
@@ -20,26 +20,81 @@
 
 <header class="nav" id="nav"><div class="wrap">
   <a href="index.html" class="brand"><span class="brand-mark">◐</span><span class="brand-txt"><small>AIWO</small><b>Tribe</b></span></a>
-  <nav class="nav-links">
-    <div class="nav-item"><a class="nav-link" href="programme.html">The Programme</a></div>
-    <div class="nav-item"><a class="nav-link" href="solutions.html">Solutions</a></div>
-    <div class="nav-item"><a class="nav-link" href="proof.html">Proof</a></div>
-    <div class="nav-item"><a class="nav-link" href="deliver.html">How We Deliver</a></div>
+  <nav class="nav-links" aria-label="Primary">
+    <div class="nav-item nav-item--mega">
+      <a class="nav-link" href="programme.html" aria-haspopup="true" aria-expanded="false">The Programme <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+      <div class="mega"><div class="mega-grid">
+        <div class="mega-col"><h5>Understand the system</h5>
+          <a class="mega-link" href="programme.html">Overview — Tribe<span>One programme, four frameworks</span></a>
+          <a class="mega-link" href="programme.html#how">How It Works — the SIIS Cycle<span>The 90-day method</span></a>
+          <a class="mega-link" href="programme.html#measure">What We Measure — BioMAP<span>200+ biomarkers, 7 panels</span></a></div>
+        <div class="mega-col"><h5>Experience the outcome</h5>
+          <a class="mega-link" href="programme.html#pillars">The 11+1 Pillars<span>The LongeVis Matrix</span></a>
+          <a class="mega-link" href="programme.html#app">The LifeOS App<span>For every employee</span></a>
+          <a class="mega-link" href="proof.html#north">The JoySpan Outcome<span>The hero metric</span></a></div>
+      </div><div class="mega-feature"><p>See the 12-month journey, baseline to proof.</p><a class="link-arrow" href="programme.html#journey">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </div>
+    <div class="nav-item nav-item--mega">
+      <a class="nav-link" href="solutions.html" aria-haspopup="true" aria-expanded="false">Solutions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+      <div class="mega"><div class="mega-grid">
+        <div class="mega-col"><h5>By outcome</h5>
+          <a class="mega-link" href="solutions.html#outcomes">Productivity Protection</a>
+          <a class="mega-link" href="solutions.html#outcomes">Critical-Role De-risking</a>
+          <a class="mega-link" href="solutions.html#outcomes">Retention &amp; Culture</a>
+          <a class="mega-link" href="solutions.html#outcomes">GLP-1 Duty of Care</a>
+          <a class="mega-link" href="solutions.html#outcomes">ESG &amp; Wellbeing Reporting</a></div>
+        <div class="mega-col"><h5>By industry</h5>
+          <a class="mega-link" href="solutions.html#industries">Technology &amp; GCCs</a>
+          <a class="mega-link" href="solutions.html#industries">Financial Services</a>
+          <a class="mega-link" href="solutions.html#industries">Manufacturing &amp; Energy</a>
+          <a class="mega-link" href="solutions.html#industries">Healthcare &amp; Pharma</a>
+          <a class="mega-link" href="solutions.html#industries">Professional Services</a></div>
+      </div><div class="mega-feature"><p>Which outcome matters most to your board?</p><a class="link-arrow" href="solutions.html">Find your fit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </div>
+    <div class="nav-item nav-item--mega">
+      <a class="nav-link" href="proof.html" aria-haspopup="true" aria-expanded="false">Proof <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+      <div class="mega"><div class="mega-grid">
+        <div class="mega-col"><h5>The evidence</h5>
+          <a class="mega-link" href="proof.html#north">Outcomes &amp; KPIs<span>The north-star trajectory</span></a>
+          <a class="mega-link" href="index.html#dashboard">The Employer Dashboard<span>Privacy-safe, aggregate-only</span></a>
+          <a class="mega-link" href="case-study.html">Results &amp; Case Studies</a></div>
+        <div class="mega-col"><h5>The science</h5>
+          <a class="mega-link" href="proof.html#science">Science &amp; Evidence<span>The clinical model</span></a>
+          <a class="mega-link" href="index.html#snapshot">Benchmarks &amp; ROI<span>Workforce snapshot estimator</span></a>
+          <a class="mega-link" href="deliver.html#clinical">Clinical Governance</a></div>
+      </div><div class="mega-feature"><p>The north-star: a proven year-over-year trajectory.</p><a class="link-arrow" href="proof.html">See the proof <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </div>
+    <div class="nav-item nav-item--mega">
+      <a class="nav-link" href="deliver.html" aria-haspopup="true" aria-expanded="false">How We Deliver <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+      <div class="mega"><div class="mega-grid">
+        <div class="mega-col"><h5>At scale</h5>
+          <a class="mega-link" href="deliver.html#scale">Delivery at Scale<span>The Wave Model</span></a>
+          <a class="mega-link" href="deliver.html#privacy">Data, Privacy &amp; Consent</a>
+          <a class="mega-link" href="deliver.html#clinical">Clinical Governance &amp; Safety</a></div>
+        <div class="mega-col"><h5>Trust</h5>
+          <a class="mega-link" href="deliver.html#security">Security &amp; Compliance<span>DPDPA · ISO · SOC-2 roadmap</span></a>
+          <a class="mega-link" href="deliver.html#people">People &amp; Certification</a></div>
+      </div><div class="mega-feature"><p>Run for 5,000 people — identically.</p><a class="link-arrow" href="deliver.html">How we scale <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </div>
     <div class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></div>
     <div class="nav-item"><a class="nav-link" href="resources.html">Resources</a></div>
   </nav>
   <div class="nav-cta">
     <a href="book.html" class="btn btn--ghost btn--sm">Executive Brief</a>
     <a href="book.html" class="btn btn--primary btn--sm magnetic">Book a Pilot</a>
-    <button class="nav-burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <button class="nav-burger" id="burger" aria-label="Open menu" aria-controls="mOverlay"><span></span><span></span><span></span></button>
   </div>
 </div></header>
 
 <div class="m-overlay" id="mOverlay">
   <div class="m-overlay-top"><a href="index.html" class="brand"><span class="brand-mark">◐</span><span class="brand-txt"><small>AIWO</small><b>Tribe</b></span></a><button class="m-close" id="mClose" aria-label="Close menu">×</button></div>
+  <div class="m-acc"><button class="m-acc-head">The Programme <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></button><div class="m-acc-body"><a href="programme.html">Overview</a><a href="programme.html#how">How It Works — SIIS</a><a href="programme.html#measure">What We Measure — BioMAP</a><a href="programme.html#pillars">The 11+1 Pillars</a><a href="programme.html#app">The LifeOS App</a></div></div>
+  <div class="m-acc"><button class="m-acc-head">Solutions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></button><div class="m-acc-body"><a href="solutions.html#outcomes">By outcome</a><a href="solutions.html#industries">By industry</a><a href="solutions.html#roles">By role</a></div></div>
+  <div class="m-acc"><button class="m-acc-head">Proof <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></button><div class="m-acc-body"><a href="proof.html#north">Outcomes &amp; KPIs</a><a href="index.html#dashboard">Employer Dashboard</a><a href="proof.html#science">Science &amp; Evidence</a><a href="case-study.html">Case Studies</a></div></div>
+  <div class="m-acc"><button class="m-acc-head">How We Deliver <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></button><div class="m-acc-body"><a href="deliver.html#scale">Delivery at Scale</a><a href="deliver.html#privacy">Privacy &amp; Consent</a><a href="deliver.html#security">Security &amp; Compliance</a></div></div>
+  <div class="m-acc"><button class="m-acc-head" onclick="location.href='pricing.html'">Pricing &amp; Plans</button></div>
   <div class="m-acc"><button class="m-acc-head" onclick="location.href='resources.html'">Resources</button></div>
-  <div class="m-acc"><button class="m-acc-head" onclick="location.href='programme.html'">The Programme</button></div>
-  <div class="m-acc"><button class="m-acc-head" onclick="location.href='proof.html'">Proof</button></div>
+  <div class="m-acc"><button class="m-acc-head" onclick="location.href='book.html'">Book a Pilot</button></div>
 </div>
 
 <main>
@@ -132,6 +187,6 @@
   <p class="footer-disclaimer">Outcomes are measured trajectories, not guarantees. Benchmarks are attributed; indicative figures are confirmed in proposal. AIWO Tribe is a measured workforce longevity programme — physician-reviewed, never "AI-diagnosed."</p>
 </div></footer>
 
-<script src="assets/js/main.js?v=3"></script>
+<script src="assets/js/main.js?v=4"></script>
 </body>
 </html>
