@@ -1,5 +1,5 @@
 /* =============================================================
-   AIWO Tribe — Interaction Layer
+   AIWO Tribe - Interaction Layer
    Signature animations, all transform/opacity, reduced-motion aware.
    ============================================================= */
 (function () {
@@ -9,7 +9,7 @@
   const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
 
   /* =============================================================
-     CANONICAL HEADER — single source of truth.
+     CANONICAL HEADER - single source of truth.
      Injected on every page so the menu system is identical
      everywhere: main items navigate to full pages; mega sub-links
      reach specific sections. No page can drift out of sync.
@@ -23,9 +23,9 @@
       '<a class="nav-link" href="programme.html">The Programme ' + CHEV + '</a>' +
       '<div class="mega"><div class="mega-grid">' +
         '<div class="mega-col"><h5>Understand the system</h5>' +
-          '<a class="mega-link" href="programme.html">Overview — Tribe<span>One programme, four frameworks</span></a>' +
-          '<a class="mega-link" href="programme.html#how">How It Works — the SIIS Cycle<span>The 90-day method</span></a>' +
-          '<a class="mega-link" href="programme.html#measure">What We Measure — BioMAP<span>200+ biomarkers, 7 panels</span></a></div>' +
+          '<a class="mega-link" href="programme.html">Overview - Tribe<span>One programme, four frameworks</span></a>' +
+          '<a class="mega-link" href="programme.html#how">How It Works - the SIIS Cycle<span>The 90-day method</span></a>' +
+          '<a class="mega-link" href="programme.html#measure">What We Measure - BioMAP<span>200+ biomarkers, 7 panels</span></a></div>' +
         '<div class="mega-col"><h5>Experience the outcome</h5>' +
           '<a class="mega-link" href="programme.html#pillars">The 11+1 Pillars<span>The LongeVis Matrix</span></a>' +
           '<a class="mega-link" href="programme.html#app">The LifeOS App<span>For every employee</span></a>' +
@@ -75,20 +75,20 @@
         '<div class="mega-col"><h5>Trust</h5>' +
           '<a class="mega-link" href="deliver.html#security">Security &amp; Compliance<span>DPDPA · ISO · SOC-2 roadmap</span></a>' +
           '<a class="mega-link" href="deliver.html#people">People &amp; Certification</a></div>' +
-      '</div><div class="mega-feature"><p>Run for 5,000 people — identically.</p>' +
+      '</div><div class="mega-feature"><p>Run for 5,000 people - identically.</p>' +
         '<a class="link-arrow" href="deliver.html">How we scale ' + ARW + '</a></div></div></div>' +
 
     '<div class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></div>' +
     '<div class="nav-item"><a class="nav-link" href="resources.html">Resources</a></div>';
 
   const NAV_CTA_HTML =
-    '<a href="book.html" class="btn btn--ghost btn--sm">Executive Brief</a>' +
+    '<a href="executive-brief.html" class="btn btn--ghost btn--sm">Executive Brief</a>' +
     '<a href="book.html" class="btn btn--primary btn--sm magnetic">Book a Pilot</a>' +
     '<button class="nav-burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>';
 
   const M_ACC_HTML =
     '<div class="m-acc"><button class="m-acc-head">The Programme ' + PLUS + '</button><div class="m-acc-body">' +
-      '<a href="programme.html">Overview</a><a href="programme.html#how">How It Works — SIIS</a><a href="programme.html#measure">What We Measure — BioMAP</a><a href="programme.html#pillars">The 11+1 Pillars</a><a href="programme.html#app">The LifeOS App</a></div></div>' +
+      '<a href="programme.html">Overview</a><a href="programme.html#how">How It Works - SIIS</a><a href="programme.html#measure">What We Measure - BioMAP</a><a href="programme.html#pillars">The 11+1 Pillars</a><a href="programme.html#app">The LifeOS App</a></div></div>' +
     '<div class="m-acc"><button class="m-acc-head">Solutions ' + PLUS + '</button><div class="m-acc-body">' +
       '<a href="solutions.html#outcomes">By outcome</a><a href="solutions.html#industries">By industry</a><a href="solutions.html#roles">By role</a></div></div>' +
     '<div class="m-acc"><button class="m-acc-head">Proof ' + PLUS + '</button><div class="m-acc-body">' +
@@ -96,7 +96,9 @@
     '<div class="m-acc"><button class="m-acc-head">How We Deliver ' + PLUS + '</button><div class="m-acc-body">' +
       '<a href="deliver.html#scale">Delivery at Scale</a><a href="deliver.html#privacy">Privacy &amp; Consent</a><a href="deliver.html#security">Security &amp; Compliance</a></div></div>' +
     '<div class="m-acc"><button class="m-acc-head" onclick="location.href=\'pricing.html\'">Pricing &amp; Plans</button></div>' +
-    '<div class="m-acc"><button class="m-acc-head" onclick="location.href=\'resources.html\'">Resources</button></div>' +
+    '<div class="m-acc"><button class="m-acc-head">Resources ' + PLUS + '</button><div class="m-acc-body">' +
+      '<a href="resources.html">Insights &amp; Resources hub</a><a href="webinars.html">Webinars &amp; Events</a><a href="guide.html">The People Leader\'s Guide</a><a href="longevity-report.html">The Longevity Report</a><a href="newsroom.html">Newsroom</a></div></div>' +
+    '<div class="m-acc"><button class="m-acc-head" onclick="location.href=\'executive-brief.html\'">Executive Brief</button></div>' +
     '<div class="m-acc"><button class="m-acc-head" onclick="location.href=\'book.html\'">Book a Pilot</button></div>';
 
   (function injectHeader() {
@@ -112,6 +114,11 @@
       if (oBrand) oBrand.setAttribute("href", "index.html");
       $$(".m-acc", overlay).forEach(x => x.remove());
       overlay.insertAdjacentHTML("beforeend", M_ACC_HTML);
+    }
+    // Mobile sticky bottom CTA (styles reserve space for it below 1080px)
+    if (!$(".m-sticky-cta")) {
+      document.body.insertAdjacentHTML("beforeend",
+        '<div class="m-sticky-cta"><a href="executive-brief.html" class="btn btn--ghost">Executive Brief</a><a href="book.html" class="btn btn--primary magnetic">Book a Pilot</a></div>');
     }
   })();
 
@@ -328,18 +335,18 @@
 
   /* ---------- Pillar wheel ---------- */
   const pillars = [
-    { p: "P1", name: "Sleep", desc: "Recovery and repair — the fastest win on the JoySpan line.", what: "Recovery, repair and circadian alignment — the foundation under every other pillar.", action: "A wind-down routine, screen curfew and a sleep-consistency target, nudged nightly.", panel: "Longevity panel", color: "#00C2A8" },
-    { p: "P2", name: "Breathing", desc: "Calm and oxygenation — resilience you can train.", what: "Breath mechanics and nervous-system regulation that lower baseline stress load.", action: "Daily guided breathwork sets, with HRV feedback from your wearable.", panel: "Inflammatory panel", color: "#2BA8FF" },
-    { p: "P3", name: "Nutrition", desc: "Metabolic health — the biggest lever on organ age.", what: "Personalised nutrition matched to your metabolic and nutritional panels.", action: "A simple plate model, targeted swaps and one habit at a time.", panel: "Metabolic panel", color: "#FFB020" },
-    { p: "P4", name: "Social", desc: "Connection — among the most engaging, shareable pillars.", what: "Relationships and belonging — a proven driver of healthspan.", action: "Team challenges and cohort moments built into the LifeOS community.", panel: "Hormonal panel", color: "#E0218A" },
-    { p: "P5", name: "Exercise", desc: "Movement — strength, VO₂ and metabolic flexibility.", what: "Structured movement matched to your capacity and goals.", action: "A weekly movement target blending strength and zone-2 cardio.", panel: "Organ Function", color: "#FF6B4A" },
-    { p: "P6", name: "Stress", desc: "Resilience — managing the load that ages you.", what: "Allostatic load and recovery — the quiet driver of decline.", action: "Micro-recovery prompts and a weekly stress-down ritual.", panel: "Hormonal panel", color: "#7A3FF2" },
-    { p: "P7", name: "Circadian", desc: "Rhythm — light, timing and the body clock.", what: "Light exposure and timing that align your internal clock.", action: "Morning light, consistent meal timing and an evening curfew.", panel: "Metabolic panel", color: "#3858E9" },
-    { p: "P8", name: "Purpose", desc: "Meaning — a long-run driver of vitality.", what: "Direction and meaning — strongly tied to longevity.", action: "Reflective prompts and goals that connect to what matters to you.", panel: "Longevity panel", color: "#2FD08A" },
-    { p: "P9", name: "Environmental", desc: "Exposures — the air, water and toxins around you.", what: "Environmental exposures that quietly raise inflammatory load.", action: "Air, water and exposure nudges tailored to your context.", panel: "Inflammatory panel", color: "#00C2A8" },
-    { p: "P10", name: "Gut Health", desc: "The microbiome — an everyday foundation.", what: "Digestive and microbiome health underpinning immunity and mood.", action: "Fibre diversity targets and gut-friendly daily habits.", panel: "Nutritional panel", color: "#FF9E2C" },
-    { p: "P11", name: "Hydration", desc: "The simplest foundation — tracked and nudged.", what: "Fluid balance — small, constant and easy to track.", action: "A personalised daily hydration target with gentle reminders.", panel: "Metabolic panel", color: "#2BA8FF" },
-    { p: "P0", name: "Genetic Foundation", desc: "The +1 beneath the eleven — your blueprint.", what: "The genetic & epigenetic foundation (CXO-tier add-on) beneath every pillar.", action: "Gene and epigenetic-age insights that personalise the whole plan.", panel: "Genomic panel", color: "#8B6BFF" }
+    { p: "P1", name: "Sleep", desc: "Recovery and repair - the fastest win on the JoySpan line.", what: "Recovery, repair and circadian alignment - the foundation under every other pillar.", action: "A wind-down routine, screen curfew and a sleep-consistency target, nudged nightly.", panel: "Longevity panel", color: "#00C2A8" },
+    { p: "P2", name: "Breathing", desc: "Calm and oxygenation - resilience you can train.", what: "Breath mechanics and nervous-system regulation that lower baseline stress load.", action: "Daily guided breathwork sets, with HRV feedback from your wearable.", panel: "Inflammatory panel", color: "#2BA8FF" },
+    { p: "P3", name: "Nutrition", desc: "Metabolic health - the biggest lever on organ age.", what: "Personalised nutrition matched to your metabolic and nutritional panels.", action: "A simple plate model, targeted swaps and one habit at a time.", panel: "Metabolic panel", color: "#FFB020" },
+    { p: "P4", name: "Social", desc: "Connection - among the most engaging, shareable pillars.", what: "Relationships and belonging - a proven driver of healthspan.", action: "Team challenges and cohort moments built into the LifeOS community.", panel: "Hormonal panel", color: "#E0218A" },
+    { p: "P5", name: "Exercise", desc: "Movement - strength, VO₂ and metabolic flexibility.", what: "Structured movement matched to your capacity and goals.", action: "A weekly movement target blending strength and zone-2 cardio.", panel: "Organ Function", color: "#FF6B4A" },
+    { p: "P6", name: "Stress", desc: "Resilience - managing the load that ages you.", what: "Allostatic load and recovery - the quiet driver of decline.", action: "Micro-recovery prompts and a weekly stress-down ritual.", panel: "Hormonal panel", color: "#7A3FF2" },
+    { p: "P7", name: "Circadian", desc: "Rhythm - light, timing and the body clock.", what: "Light exposure and timing that align your internal clock.", action: "Morning light, consistent meal timing and an evening curfew.", panel: "Metabolic panel", color: "#3858E9" },
+    { p: "P8", name: "Purpose", desc: "Meaning - a long-run driver of vitality.", what: "Direction and meaning - strongly tied to longevity.", action: "Reflective prompts and goals that connect to what matters to you.", panel: "Longevity panel", color: "#2FD08A" },
+    { p: "P9", name: "Environmental", desc: "Exposures - the air, water and toxins around you.", what: "Environmental exposures that quietly raise inflammatory load.", action: "Air, water and exposure nudges tailored to your context.", panel: "Inflammatory panel", color: "#00C2A8" },
+    { p: "P10", name: "Gut Health", desc: "The microbiome - an everyday foundation.", what: "Digestive and microbiome health underpinning immunity and mood.", action: "Fibre diversity targets and gut-friendly daily habits.", panel: "Nutritional panel", color: "#FF9E2C" },
+    { p: "P11", name: "Hydration", desc: "The simplest foundation - tracked and nudged.", what: "Fluid balance - small, constant and easy to track.", action: "A personalised daily hydration target with gentle reminders.", panel: "Metabolic panel", color: "#2BA8FF" },
+    { p: "P0", name: "Genetic Foundation", desc: "The +1 beneath the eleven - your blueprint.", what: "The genetic & epigenetic foundation (CXO-tier add-on) beneath every pillar.", action: "Gene and epigenetic-age insights that personalise the whole plan.", panel: "Genomic panel", color: "#8B6BFF" }
   ];
   const wheel = $("#wheel");
   const NSEG = pillars.length, GAP = 0.04;
@@ -496,7 +503,7 @@
     const recEl = $("#snapRec");
     if (recEl) {
       recEl.textContent = (metabolic / Math.max(head, 1) > 0.2)
-        ? "lead with a metabolic-and-cardiac–focused pilot — the GLP-1-era priority — then scale by wave across the workforce."
+        ? "lead with a metabolic-and-cardiac–focused pilot - the GLP-1-era priority - then scale by wave across the workforce."
         : "begin with a broad baseline pilot, then prioritise the reversible flags it surfaces and scale by wave.";
     }
   }
@@ -510,10 +517,10 @@
 
   /* ---------- 12-month journey timeline ---------- */
   const journeyData = [
-    { badge: "M0", title: "Month 0 — Baseline", text: "A 20-minute on-site draw, then the Smart Report, the supplement starter pack and the first personalised plan — within days.", meta: "One annual full panel · 200+ markers" },
-    { badge: "1–3", title: "Months 1–3 — Act", text: "Pillar actions, in-app nudges and the first monthly masterclass. The plan becomes daily systems the employee actually keeps.", meta: "The plan becomes daily systems" },
-    { badge: "3·6·9", title: "Months 3 / 6 / 9 — Re-measure", text: "Three light quarterly progress re-tests measure what was intervened on — and the score begins to move.", meta: "Re-test the intervention, not the full panel" },
-    { badge: "M12", title: "Month 12 — Prove & Renew", text: "The full panel re-baselines and the JoySpan line is shown a year on. Renewal opens on a proven trajectory.", meta: "Renewal earned on a proven trajectory" }
+    { badge: "M0", title: "Month 0 - Baseline", text: "A 20-minute on-site draw, then the Smart Report, the supplement starter pack and the first personalised plan - within days.", meta: "One annual full panel · 200+ markers" },
+    { badge: "1–3", title: "Months 1–3 - Act", text: "Pillar actions, in-app nudges and the first monthly masterclass. The plan becomes daily systems the employee actually keeps.", meta: "The plan becomes daily systems" },
+    { badge: "3·6·9", title: "Months 3 / 6 / 9 - Re-measure", text: "Three light quarterly progress re-tests measure what was intervened on - and the score begins to move.", meta: "Re-test the intervention, not the full panel" },
+    { badge: "M12", title: "Month 12 - Prove & Renew", text: "The full panel re-baselines and the JoySpan line is shown a year on. Renewal opens on a proven trajectory.", meta: "Renewal earned on a proven trajectory" }
   ];
   const journeyNodes = $$("#journeyTrack .journey-node");
   const jdBadge = $("#jdBadge"), jdTitle = $("#jdTitle"), jdText = $("#jdText"), jdMeta = $("#jdMeta");
@@ -568,13 +575,13 @@
         ch.classList.add("sel");
       }));
     });
-    function getVal(group) { const sel = $(`[data-group="${group}"] .choice.sel`); return sel ? sel.dataset.val : "—"; }
+    function getVal(group) { const sel = $(`[data-group="${group}"] .choice.sel`); return sel ? sel.dataset.val : "-"; }
     function buildReview() {
       const review = $("#formReview");
       if (!review) return;
       const rows = [
-        ["Company", $("#company").value || "—"],
-        ["Contact", ($("#fullname").value || "—") + ($("#email").value ? " · " + $("#email").value : "")],
+        ["Company", $("#company").value || "-"],
+        ["Contact", ($("#fullname").value || "-") + ($("#email").value ? " · " + $("#email").value : "")],
         ["Headcount", $("#headcount").value],
         ["Sector", getVal("sector")],
         ["Role", getVal("role")],
@@ -593,18 +600,18 @@
   }
 
   /* ---------- Reusable scoped tabsets ---------- */
+  const selectTab = (set, i) => {
+    const btns = $$(".ts-btn", set), panels = $$(".ts-panel", set);
+    btns.forEach(b => b.classList.toggle("active", b.dataset.i === i));
+    panels.forEach(p => p.classList.toggle("active", p.dataset.i === i));
+  };
   $$("[data-tabset]").forEach(set => {
-    const btns = $$(".ts-btn", set);
-    const panels = $$(".ts-panel", set);
-    btns.forEach(btn => btn.addEventListener("click", () => {
-      const i = btn.dataset.i;
-      btns.forEach(b => b.classList.remove("active"));
-      panels.forEach(p => p.classList.remove("active"));
-      btn.classList.add("active");
-      const panel = panels.find(p => p.dataset.i === i);
-      if (panel) panel.classList.add("active");
-    }));
+    $$(".ts-btn", set).forEach(btn => btn.addEventListener("click", () => selectTab(set, btn.dataset.i)));
   });
+  // Deep-link support: ?tab=N opens tab N of the first tabset (e.g. solutions.html?tab=3#outcomes)
+  const tabParam = new URLSearchParams(location.search).get("tab");
+  const firstTabset = $("[data-tabset]");
+  if (tabParam !== null && firstTabset) selectTab(firstTabset, tabParam);
 
   /* ---------- Legal index scrollspy ---------- */
   const legalIndex = $("#legalIndex");

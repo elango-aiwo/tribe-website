@@ -8,3 +8,6 @@ Desktop.ini
 # Logs
 *.log
 npm-debug.log*
+
+# Local dev tooling (Claude Code preview config)
+.claude/

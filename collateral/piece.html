@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Collateral Asset — AIWO Tribe</title>
+<title>Collateral Asset - AIWO Tribe</title>
 <meta name="description" content="Detailed, downloadable collateral asset for AIWO Tribe." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -251,7 +251,7 @@ footer .wrap{max-width:1180px}
 <div class="toast" id="toast"></div>
 
 <footer><div class="wrap">
-  <p class="disc">Internal / controlled. Outcomes are measured trajectories, not guarantees. Benchmarks are attributed; indicative figures are confirmed in proposal. Physician-reviewed, never "AI-diagnosed." Do not expose internal cost or margin in customer-facing pieces. Designed previews are templates — finalise in brand tooling before production. © 2026 AIWO.</p>
+  <p class="disc">Internal / controlled. Outcomes are measured trajectories, not guarantees. Benchmarks are attributed; indicative figures are confirmed in proposal. Physician-reviewed, never "AI-diagnosed." Do not expose internal cost or margin in customer-facing pieces. Designed previews are templates - finalise in brand tooling before production. © 2026 AIWO.</p>
 </div></footer>
 
 <script src="data/details.js?v=2"></script>
@@ -308,7 +308,7 @@ function toMarkdown(p){
   var _proof=RP(p,4);if(_proof.length){L.push('');L.push('## Proof points');_proof.forEach(m=>L.push('- '+m));}
   if(p.specs){L.push('');L.push('## Specs');Object.entries(p.specs).forEach(([k,v])=>L.push('- **'+k+':** '+v));}
   var _use=RU(p);if(_use){L.push('');L.push('## Usage & claims discipline');L.push(_use);}
-  if(p.related&&p.related.length){L.push('');L.push('## Related collateral');p.related.forEach(r=>{const x=D[r];L.push('- '+r+(x?' — '+x.title:''));});}
+  if(p.related&&p.related.length){L.push('');L.push('## Related collateral');p.related.forEach(r=>{const x=D[r];L.push('- '+r+(x?' - '+x.title:''));});}
   L.push('');L.push('---');L.push('_AIWO Tribe collateral. Outcomes are measured trajectories, not guarantees._');
   return L.join('\n');
 }
@@ -323,15 +323,15 @@ function buildSlides(p){
 }
 function toDeckMarkdown(p){
   const slides=buildSlides(p);const L=[];
-  L.push('# '+p.title+' — Deck');
+  L.push('# '+p.title+' - Deck');
   L.push('');L.push('_AIWO Tribe · '+slides.length+' slides (estimated) · ID '+id+'_');
   L.push('');L.push('---');
   slides.forEach((sl,i)=>{
     const n=i+1;L.push('');
-    if(sl.kind==='title'){L.push('## Slide '+n+' — Title');L.push('**'+p.title+'**');L.push('');L.push('_'+(p.tagline||'')+'_');L.push('');L.push('AIWO Tribe · Measured Workforce Longevity');}
-    else if(sl.kind==='cta'){L.push('## Slide '+n+' — The ask');L.push((p.cta&&p.cta.label)||'Book a Pilot');L.push('');L.push('Lengthen the joyspan. Compress the sufferspan. Prove it — year over year.');}
-    else if(sl.kind==='list'){L.push('## Slide '+n+' — '+sl.heading);sl.items.forEach(it=>L.push('- '+it));}
-    else {L.push('## Slide '+n+' — '+sl.heading);L.push('_'+sl.eyebrow+'_');L.push('');L.push(sl.body);}
+    if(sl.kind==='title'){L.push('## Slide '+n+' - Title');L.push('**'+p.title+'**');L.push('');L.push('_'+(p.tagline||'')+'_');L.push('');L.push('AIWO Tribe · Measured Workforce Longevity');}
+    else if(sl.kind==='cta'){L.push('## Slide '+n+' - The ask');L.push((p.cta&&p.cta.label)||'Book a Pilot');L.push('');L.push('Lengthen the joyspan. Compress the sufferspan. Prove it - year over year.');}
+    else if(sl.kind==='list'){L.push('## Slide '+n+' - '+sl.heading);sl.items.forEach(it=>L.push('- '+it));}
+    else {L.push('## Slide '+n+' - '+sl.heading);L.push('_'+sl.eyebrow+'_');L.push('');L.push(sl.body);}
     L.push('');L.push('---');
   });
   L.push('_Speaker note: outcomes are measured trajectories, not guarantees. Do not expose internal cost or margin._');
@@ -421,12 +421,12 @@ function relatedHtml(ids){return (ids||[]).map(rid=>{const r=D[rid];if(!r)return
 
 /* ---------- render ---------- */
 if(!p){
-  document.title='Brief in production — AIWO Collateral';
-  app.innerHTML='<main><div class="wrap fallback"><h1>This asset is in production.</h1><p>Piece <strong>'+(id||'—')+'</strong> is part of an upcoming wave.</p><a class="btn" style="width:auto;display:inline-flex" href="index.html">'+arrow+' Back to the collateral library</a></div></main>';
+  document.title='Brief in production - AIWO Collateral';
+  app.innerHTML='<main><div class="wrap fallback"><h1>This asset is in production.</h1><p>Piece <strong>'+(id||'-')+'</strong> is part of an upcoming wave.</p><a class="btn" style="width:auto;display:inline-flex" href="index.html">'+arrow+' Back to the collateral library</a></div></main>';
 }else{
   const kind=window.AIWO_KIND?window.AIWO_KIND(p.title):'doc';
   const km=kindMeta[kind]||{label:'Document',glyph:'▤'};
-  document.title=p.title+' — AIWO Collateral';
+  document.title=p.title+' - AIWO Collateral';
   const st=STATUS[p.status||'LIVE'];
   const meta=[['Asset type',km.label],['Stage',p.stage],['Format',p.format],['Audience',(p.audience||[]).join(' · ')],['Channels',(p.channels||[]).join(' · ')]].filter(m=>m[1]).map(m=>'<div class="meta-item"><div class="ml">'+m[0]+'</div><div class="mv">'+esc(m[1])+'</div></div>').join('');
   const contents=(p.contents||[]).map(c=>'<div class="c-item"><h4>'+esc(c.heading)+'</h4><p>'+esc(c.body)+'</p></div>').join('');
@@ -441,18 +441,18 @@ if(!p){
   let preview='';
   if(kind==='deck'){
     const stageSlides=slides.map((sl,i)=>'<div class="fit">'+slideHTML(p,sl,i,slides.length)+'</div>').join('');
-    preview='<div class="section"><div class="preview-head"><h2>Designed preview — Deck</h2></div>'+
+    preview='<div class="section"><div class="preview-head"><h2>Designed preview - Deck</h2></div>'+
       '<p class="preview-note">A presentation-ready, slide-by-slide build generated from this brief. Estimated <strong>'+slides.length+' slides</strong> (A4 landscape).</p>'+
       '<div class="exp-row"><button class="exp-btn exp-primary" onclick="EXP.deckMd()">'+dl+' Download slide content (.md)</button><button class="exp-btn exp-ghost" onclick="EXP.deckPdf()">'+pdf+' Save deck as PDF</button></div>'+
       '<div class="slidecount">'+slides.length+' slides · scroll to review</div>'+
       '<div class="stage">'+stageSlides+'</div></div>';
   } else if(kind==='flyer'){
-    preview='<div class="section"><div class="preview-head"><h2>Designed preview — A4 Flyer</h2><div class="seg" id="orientSeg"><button class="on" data-o="port" onclick="EXP.orient(\'port\')">Portrait</button><button data-o="land" onclick="EXP.orient(\'land\')">Landscape</button></div></div>'+
+    preview='<div class="section"><div class="preview-head"><h2>Designed preview - A4 Flyer</h2><div class="seg" id="orientSeg"><button class="on" data-o="port" onclick="EXP.orient(\'port\')">Portrait</button><button data-o="land" onclick="EXP.orient(\'land\')">Landscape</button></div></div>'+
       '<p class="preview-note">A ready, exact-A4 one-pager. Toggle orientation, then save a true A4 PDF.</p>'+
       '<div class="exp-row"><button class="exp-btn exp-primary" onclick="EXP.flyerPdf()">'+pdf+' Save as A4 PDF</button><button class="exp-btn exp-ghost" onclick="EXP.md()">'+dl+' Download copy (.md)</button></div>'+
       '<div class="stage"><div class="fit" id="flyerFit">'+flyerHTML(p,'port')+'</div></div></div>';
   } else if(kind==='poster'){
-    preview='<div class="section"><div class="preview-head"><h2>Designed preview — Poster</h2></div>'+
+    preview='<div class="section"><div class="preview-head"><h2>Designed preview - Poster</h2></div>'+
       '<p class="preview-note">A bold A4 poster mockup so you see the outcome before production.</p>'+
       '<div class="exp-row"><button class="exp-btn exp-primary" onclick="EXP.posterPdf()">'+pdf+' Save poster as PDF</button><button class="exp-btn exp-ghost" onclick="EXP.md()">'+dl+' Download copy (.md)</button></div>'+
       '<div class="stage"><div class="fit">'+posterHTML(p)+'</div></div></div>';
